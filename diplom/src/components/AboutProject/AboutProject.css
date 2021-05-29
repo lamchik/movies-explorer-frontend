@@ -1,0 +1,108 @@
+.about-project {
+  background-color: #202020;
+  padding: 110px 70px;
+}
+
+/* .about-project__header {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 57px;
+  color: #ffff;
+  letter-spacing: -0.04em;
+  margin: 0 0 26px 0;
+  text-align: left;
+} */
+
+/* .about-project__line {
+  background-color: #dadada;
+  height: 1px;
+  border: none;
+} */
+
+.about-project__info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-project__info-steps {
+  text-align: left;
+  width: 550px;
+}
+
+.about-project__info-steps-header {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffff;
+  letter-spacing: -0.04em;
+  margin: 70px 0 26px;
+}
+
+.about-project__info-steps-text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffff;
+}
+
+.about-project__timeline-wrap {
+  display: flex;
+  padding-top: 110px;
+}
+
+.about-project__timeline-backend {
+  background-color: #3ddc84;
+  width: 20vw;
+}
+
+.about-project__timeline-backend-text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
+}
+
+.about-project__timeline-frontend {
+  background-color: #303030;
+  width: 80vw;
+}
+
+.about-project__timeline-frontend-text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+}
+
+.about-project__inscription {
+  display: flex;
+  padding-top: 14px;
+}
+
+.about-project__inscription-backend {
+  width: 20vw;
+}
+
+.about-project__backend-frontend {
+  width: 80vw;
+}
+
+.about-project__inscription-backend-text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #8b8b8b;
+  margin: 0;
+}

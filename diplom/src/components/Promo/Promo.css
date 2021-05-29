@@ -1,0 +1,23 @@
+.promo {
+  background-color: #073042;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.promo__text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 58px;
+  color: #ffff;
+  letter-spacing: -0.04em;
+  margin: 0;
+  width: 730px;
+  position: absolute;
+}
+
+.promo__logo {
+  position: relative;
+}

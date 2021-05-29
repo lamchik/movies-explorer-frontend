@@ -1,0 +1,37 @@
+.footer {
+  background-color: #202020;
+  padding: 79px 70px 20px;
+}
+
+.footer__descriptopn {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #8b8b8b;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.footer__line {
+}
+
+.footer__social-year-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__social-year-text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 20px 0 0;
+}
+
+.footer__social-wrap {
+}

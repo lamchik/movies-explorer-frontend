@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Header/Header';
+import Container from '../Container/Container';
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
 
 import './App.css';
@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
+        <Container></Container>
       </div>
       <Switch>
         <Route path="/sgin-up">

@@ -1,0 +1,11 @@
+.main-header {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 57px;
+  color: #ffff;
+  letter-spacing: -0.04em;
+  margin: 0 0 26px 0;
+  text-align: left;
+}
