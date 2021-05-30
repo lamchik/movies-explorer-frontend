@@ -3,6 +3,8 @@
   padding: 28px 70px;
   display: flex;
   justify-content: space-between;
+  height: 74px;
+  box-sizing: border-box;
 }
 
 .header-profile__logo {

@@ -1,11 +1,12 @@
 .profile {
   background-color: #202020;
   padding: 74px 435px 70px;
-  height: 88.6vh;
+  height: calc(100vh - 74px);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 /* .profile__main {
   display: flex;
@@ -23,6 +24,7 @@
 }
 
 .profile__form {
+  width: 410px;
 }
 
 .profile__form-name {
@@ -42,6 +44,9 @@
   color: #ffffff;
 }
 
+.profile__line {
+  width: 410px;
+}
 .profile__form-name-inpu {
 }
 
