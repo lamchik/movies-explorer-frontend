@@ -4,6 +4,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import Register from "../Register/Register"
 import Login from "../Login/Login"
 import PageNotFound from "../PageNotFound/PageNotFound"
+import Profile from "../Profile/Profile"
 
 
 import './App.css';
@@ -21,6 +22,9 @@ function App() {
             </Route>
             <Route path="/signin">
               <Login></Login>
+            </Route>
+            <Route path="/profile">
+              <Profile></Profile>
             </Route>
             <Route path="*">
               <PageNotFound></PageNotFound>

@@ -45,6 +45,11 @@
   align-items: center;
   justify-content: center;
   margin-right: 10px;
+  transition: 0.2s linear;
+}
+
+.tech__name:hover {
+  background-color: #3ddc84;
 }
 
 .tech__name-text {
