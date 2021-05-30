@@ -35,6 +35,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+
+.header__auth-sign-up:hover {
+  opacity: 0.7;
 }
 
 .header__auth-sign-in {
@@ -43,10 +49,21 @@
   font-size: 12px;
   line-height: 16px;
   background-color: #3ddc84;
+  border-radius: 3px;
   width: 76px;
   height: 32px;
-  border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  color: #000;
+}
+.header__auth-sign-in-button {
+  border: none;
+  padding: 0;
+  border-radius: 3px;
+  transition: 0.2s linear;
+}
+.header__auth-sign-in-button:hover {
+  opacity: 0.7;
 }

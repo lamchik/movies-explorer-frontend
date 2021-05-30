@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link} from 'react-router-dom';
 import logo from "../../images/logo-header.svg"
 import "../Header/Header.css"
 import "../../fonts/inter-3.13/inter-web/inter.css"
@@ -10,8 +10,11 @@ function Header () {
                 <img className="header__logo-img" src={logo} alt="S" />
             </div>
             <div className="header__auth">
-                <p className="header__auth-sign-up">Регистрация</p>
-                <p className="header__auth-sign-in">Войти</p>
+                <Link to="/signup" className="header__auth-sign-up">Регистрация</Link>
+                <button className="header__auth-sign-in-button">
+                    <Link to="/signin" className="header__auth-sign-in">Войти</Link>
+                </button>
+                
             </div>
         </header>
         

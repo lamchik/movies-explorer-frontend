@@ -1,6 +1,8 @@
 import React from 'react';
 import Container from '../Container/Container';
 import { Route, Switch, BrowserRouter } from 'react-router-dom'
+import Register from "../Register/Register"
+import Login from "../Login/Login"
 
 import './App.css';
 
@@ -8,16 +10,17 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Container></Container>
+        <Route exact path="/">
+          <Container></Container>
+        </Route>
       </div>
-      <Switch>
-        <Route path="/sgin-up">
+        <Route path="/signup">
+          <Register></Register>
+        </Route>
+        <Route path="/signin">
+          <Login></Login>
 
         </Route>
-        <Route path="/sign-in">
-
-        </Route>
-      </Switch>
     </BrowserRouter>
 
   );

@@ -61,6 +61,11 @@
   color: #ffff;
   margin: 0 20px 0 0;
   text-decoration: none;
+  transition: 0.2s linear;
+}
+
+.aboutme__social:hover {
+  opacity: 0.5;
 }
 
 .aboutme__photo {

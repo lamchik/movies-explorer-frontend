@@ -16,4 +16,9 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
+  transition: 0.2s linear;
+}
+
+.navigation__link-text:hover {
+  opacity: 0.5;
 }

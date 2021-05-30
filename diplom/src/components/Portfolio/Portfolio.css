@@ -46,4 +46,9 @@
   color: #ffffff;
   text-decoration: none;
   margin: 0;
+  transition: 0.2s linear;
+}
+
+.portfolio__link:hover {
+  opacity: 0.5;
 }

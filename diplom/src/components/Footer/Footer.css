@@ -31,7 +31,9 @@
   color: #ffffff;
   text-decoration: none;
   margin: 0 20px 0 0;
+  transition: 0.2s linear;
 }
 
-.footer__social-wrap {
+.footer__social-year-text:hover {
+  opacity: 0.5;
 }
