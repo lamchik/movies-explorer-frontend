@@ -1,7 +1,20 @@
 .entrance {
-  background-color: #202020;
   padding: 70px 442px;
-  min-height: 100vh;
+  height: 100vh;
+  background-color: #202020;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.entrance-wrap {
+  height: 100vh;
+
+  background-color: #202020;
+}
+
+.entrance__form-wrap {
 }
 
 .entrance__headline-logo {
@@ -15,6 +28,12 @@
   margin: 0 0 40px 0;
 }
 
+.entrance__input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .entrance__headline {
   font-family: 'Inter', 'Arial', sans-serif;
   font-weight: 500;
@@ -22,6 +41,7 @@
   color: #fff;
   line-height: 29px;
   margin: 0 0 40px 0;
+  text-align: left;
 }
 
 .entrance__form-line {
@@ -29,6 +49,7 @@
   height: 1px;
   border: none;
   margin: 0 0 24px 0;
+  width: 38.5vw;
 }
 .entrance__form-headline {
   font-family: 'Inter', 'Arial', sans-serif;
@@ -59,9 +80,9 @@
   border-radius: 3px;
   color: #fff;
   border: none;
-  width: 39vw;
+  width: 38.5vw;
   min-height: 45px;
-  margin: 152px 0 18px 0;
+  margin: 0 0 18px 0;
   cursor: pointer;
   transition: 0.2s linear;
 }
@@ -91,6 +112,7 @@
   line-height: 17px;
   text-decoration: none;
   transition: 0.2s linear;
+  cursor: pointer;
 }
 .entrance__login-link:hover {
   opacity: 0.7;
