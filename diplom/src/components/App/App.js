@@ -31,6 +31,9 @@ function App() {
           <Route path="/profile">
             <Profile></Profile>
           </Route>
+          <Route path="/saved-movies">
+              {/* <Container></Container> */}
+          </Route>
           <Route path="*">
             <PageNotFound></PageNotFound>
           </Route>

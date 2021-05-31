@@ -6,6 +6,7 @@ import icon from "../../images/account.svg"
 import { Route } from 'react-router-dom'
 import Container from '../Container/Container';
 import Movie from "../Movies/Movies";
+import Profile from "../Profile/Profile";
 
 
 
@@ -26,20 +27,20 @@ function ProfileHeader () {
                 </div>
             </div>
             <div className="header-profile__user">
-                <p className="header-profile__user-text">Аккаунт</p>
+                <Link className="header-profile__user-text" to="/profile">Аккаунт</Link>
                 <div className="header-profile__user-icon">
                     <img className="header-profile__user-icon-img" src={icon} alt="иконка"/>
                 </div>
             </div>
-            <Route exact path="/">
+            {/* <Route exact path="/">
                 <Container></Container>
             </Route>
-            {/* <Route exact path="/movies">
-                <Movie></Movie>
+            <Route path="/profile">
+                <Profile></Profile>
+            </Route>
+            <Route path="/saved-movies">
+                <Container></Container>
             </Route> */}
-            <Route exact path="/saved-movies">
-                <Container></Container>
-            </Route>
         </div>
     )
 }

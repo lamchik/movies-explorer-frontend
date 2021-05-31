@@ -1,0 +1,8 @@
+.movies-list {
+  background-color: #202020;
+  padding: 70px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(4, 24%);
+  gap: 38px 20px;
+}

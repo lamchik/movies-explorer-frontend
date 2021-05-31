@@ -43,9 +43,6 @@ function Register() {
                     <Link className="entrance__login-link" to="/signin">Войти</Link>
                 </div>
             </form>
-            <Route exact path="/">
-                <Container></Container>
-            </Route>
         </div>
 
     )
