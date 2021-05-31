@@ -2,6 +2,7 @@ import "../Profile/Profile.css"
 import "../../fonts/inter-3.13/inter-web/inter.css"
 import ProfileHeader from "../ProfileHeader/ProfileHeader"
 
+
 function Profile() {
     return (
         <>
@@ -23,6 +24,8 @@ function Profile() {
                     <button className="profile__button-edit">Редактировать</button>
                     <button className="profile__button-exit">Выйти из аккаунта</button>
                 </div>
+
+
             </div>
         </>
     )

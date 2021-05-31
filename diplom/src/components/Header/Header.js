@@ -1,7 +1,9 @@
-import { NavLink, Link} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import logo from "../../images/logo-header.svg"
 import "../Header/Header.css"
 import "../../fonts/inter-3.13/inter-web/inter.css"
+import { Route } from 'react-router-dom'
+
 
 function Header () {
     return (
@@ -18,12 +20,6 @@ function Header () {
             </div>
         </header>
         
-        // <nav className="">
-        //     <NavLink to="/"activeClassName="menu__link_active" className="header__link">ЛОГО</NavLink>
-        //     <NavLink to="/movies" activeClassName="menu__link_active" className="">Фильмы</NavLink>
-        //     <NavLink to="/saved-movies" activeClassName="menu__link_active" className="">Сохраненные фильмы</NavLink>
-        //     <NavLink to="/profile" activeClassName="menu__link_active" className="">Аккаунт</NavLink>
-        // </nav>
     )
 }
 

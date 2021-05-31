@@ -14,9 +14,6 @@
   background-color: #202020;
 }
 
-.entrance__form-wrap {
-}
-
 .entrance__headline-logo {
   background-color: #3ddc84;
   width: 38px;
@@ -26,8 +23,12 @@
   align-items: center;
   justify-content: center;
   margin: 0 0 40px 0;
+  transition: 0.2s linear;
 }
 
+.entrance__headline-logo:hover {
+  opacity: 0.5;
+}
 .entrance__input {
   display: flex;
   flex-direction: column;

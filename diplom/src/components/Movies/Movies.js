@@ -1,3 +1,19 @@
+import ProfileHeader from "../ProfileHeader/ProfileHeader";
+import "../Movies/Movies.css"
+import SearchForm from "../SearchForm/SearchForm";
+
+function Movie() {
+    return(
+        <div className="movie">
+            <ProfileHeader></ProfileHeader>
+            <SearchForm></SearchForm>
+
+        </div>
+
+    )
+}
+export default Movie
+
 // import { NavLink } from 'react-router-dom';
 
 // function Movies () {

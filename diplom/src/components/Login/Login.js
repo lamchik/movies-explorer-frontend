@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import "../Register/Register.css"
 import "../../fonts/inter-3.13/inter-web/inter.css"
 import logo from "../../images/logo-header.svg"
+import "../Register/Register.css"
+import "../../fonts/inter-3.13/inter-web/inter.css"
 
 
 
@@ -10,9 +12,11 @@ function Login() {
         <div className="entrance">
         <div className="entrance__form-wrap">
             <div className="entrance__headline-wrap ">
-                <div className="entrance__headline-logo">
-                    <img className="entrance__headline-img" src={logo} alt="S"/>
-                </div>
+                <Link to="/">
+                    <div className="entrance__headline-logo">
+                        <img className="entrance__headline-img" src={logo} alt="S"/>
+                    </div>
+                </Link>
                 <h2 className="entrance__headline">Рады видеть!</h2>
             </div>
             <form className="entrance__form">
