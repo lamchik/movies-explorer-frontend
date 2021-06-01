@@ -37,3 +37,27 @@
 .footer__social-year-text:hover {
   opacity: 0.5;
 }
+
+@media all and (max-width: 767px) {
+  .footer {
+    padding: 79px 10px 10px 10px;
+  }
+  .footer__social-year-wrap {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .footer__social-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .footer__social-year-text {
+    margin: 0 0 12px 0;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1267px) {
+  .footer {
+    padding: 79px 30px 20px;
+  }
+}

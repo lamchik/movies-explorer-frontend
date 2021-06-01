@@ -42,6 +42,7 @@
   color: #ffff;
   letter-spacing: -0.04em;
   margin: 70px 0 26px;
+  word-wrap: break-word;
 }
 
 .about-project__info-steps-text {
@@ -51,6 +52,7 @@
   font-size: 14px;
   line-height: 20px;
   color: #ffff;
+  word-wrap: break-word;
 }
 
 .about-project__timeline-wrap {
@@ -112,4 +114,45 @@
   line-height: 17px;
   color: #8b8b8b;
   margin: 0;
+}
+
+@media all and (max-width: 767px) {
+  .about-project {
+    padding: 70px 16px;
+  }
+
+  .about-project__info {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-project__info-steps {
+    width: 284px;
+  }
+  .about-project__timeline-backend {
+    width: 100px;
+  }
+  .about-project__inscription-backend-text {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .about-project__timeline-backend-text {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .about-project__timeline-backend-frontend {
+    height: 35px;
+  }
+
+  .about-project__timeline-frontend-text {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1267px) {
+  .about-project {
+    min-height: 0;
+    padding: 90px 50px;
+  }
 }

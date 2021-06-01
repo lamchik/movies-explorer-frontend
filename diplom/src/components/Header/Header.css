@@ -16,7 +16,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 18px 0;
   border: none;
   cursor: pointer;
   transition: 0.2s linear;
@@ -74,4 +73,27 @@
 }
 .header__auth-sign-in-button:hover {
   opacity: 0.7;
+}
+
+@media all and (max-width: 767px) {
+  .header {
+    padding: 0 14px;
+  }
+  .header__auth-sign-in {
+    width: 54px;
+    height: 26px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+  .header__auth-sign-up {
+    font-size: 10px;
+    line-height: 16px;
+    margin-right: 26px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1267px) {
+  .header {
+    min-height: 74px;
+  }
 }

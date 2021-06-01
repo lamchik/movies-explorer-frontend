@@ -14,10 +14,31 @@
   color: #ffff;
   letter-spacing: -0.04em;
   margin: 0;
-  width: 730px;
+  max-width: 730px;
   position: absolute;
+  word-wrap: break-word;
 }
 
 .promo__logo {
   position: relative;
+}
+
+@media all and (max-width: 767px) {
+  .promo {
+    min-height: 570px;
+  }
+  .promo__text {
+    font-size: 31px;
+    line-height: 39px;
+  }
+  .promo__logo {
+    width: 248px;
+    height: 248px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1267px) {
+  .promo {
+    min-height: 764px;
+  }
 }
