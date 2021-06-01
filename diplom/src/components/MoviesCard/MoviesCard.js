@@ -1,4 +1,3 @@
-import movie from "../../images/movie.png"
 import "../MoviesCard/MoviesCard.css"
 import "../../fonts/inter-3.13/inter-web/inter.css"
 

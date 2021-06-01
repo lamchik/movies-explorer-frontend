@@ -3,10 +3,7 @@ import "../ProfileHeader/ProfileHeader.css"
 import "../../fonts/inter-3.13/inter-web/inter.css"
 import { Link, NavLink } from 'react-router-dom';
 import icon from "../../images/account.svg"
-import { Route } from 'react-router-dom'
-import Container from '../Container/Container';
-import Movie from "../Movies/Movies";
-import Profile from "../Profile/Profile";
+
 
 
 
@@ -23,7 +20,7 @@ function ProfileHeader () {
                 </Link>
                 <div className="header-profile__link">
                     <NavLink className="header-profile__link-text" to="/movies" activeClassName="nav__link_active">Фильмы</NavLink>
-                    <NavLink className="header-profile__link-text" to="/saved-movies"  activeClassName="nav__link_active">Сохранённые фильмы</NavLink>
+                    <NavLink className="header-profile__link-text" to="/saved-movies" activeClassName="nav__link_active">Сохранённые фильмы</NavLink>
                 </div>
             </div>
             <div className="header-profile__user">
