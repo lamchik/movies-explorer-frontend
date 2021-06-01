@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #073042;
+  min-height: 10vh;
 }
 
 .header__logo {

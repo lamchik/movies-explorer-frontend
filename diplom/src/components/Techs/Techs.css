@@ -1,6 +1,8 @@
 .tech {
   background-color: #272727;
   padding: 100px 70px;
+  box-sizing: border-box;
+  min-height: 100vh;
 }
 
 .tech__description-wrap {
