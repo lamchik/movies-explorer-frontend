@@ -10,7 +10,7 @@ function Register() {
     return(
         <div className="entrance">
             <div className="entrance__form-wrap">
-                <div className="entrance__headline-wrap ">
+                <div className="entrance__headline-wrap">
                     <Link to="/">
                         <div className="entrance__headline-logo">
                             <img className="entrance__headline-img" src={logo} alt="S"/>
