@@ -67,3 +67,45 @@
   width: 11.5px;
   height: 14px;
 }
+.header-profile__button {
+  background-color: #202020;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s linear;
+  width: 44px;
+  height: 44px;
+  display: none;
+}
+.header-profile__button:hover {
+  opacity: 0.5;
+}
+
+@media all and (max-width: 767px) {
+  .header-profile {
+    padding: 15px 14px;
+  }
+  .header-profile__link {
+    display: none;
+  }
+  .header-profile__user {
+    display: none;
+  }
+  .header-profile__button {
+    display: block;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1279px) {
+  .header-profile {
+    padding: 18px 30px;
+  }
+  .header-profile__link {
+    display: none;
+  }
+  .header-profile__user {
+    display: none;
+  }
+  .header-profile__button {
+    display: block;
+  }
+}

@@ -3,6 +3,7 @@ import "../ProfileHeader/ProfileHeader.css"
 import "../../fonts/inter-3.13/inter-web/inter.css"
 import { Link, NavLink } from 'react-router-dom';
 import icon from "../../images/account.svg"
+import menu from "../../images/burger.svg"
 
 
 
@@ -29,6 +30,9 @@ function ProfileHeader () {
                     <img className="header-profile__user-icon-img" src={icon} alt="иконка"/>
                 </div>
             </div>
+            <button className="header-profile__button">
+                <img className="header-profile__button-img" src={menu} alt="меню"/>
+            </button>
             {/* <Route exact path="/">
                 <Container></Container>
             </Route>
