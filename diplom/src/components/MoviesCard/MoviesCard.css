@@ -46,12 +46,12 @@
 }
 
 .card__like_active {
-  /* background-image: url(../../images/like.svg);
+  background-image: url(../../images/like.svg);
   border: none;
   width: 10px;
   height: 8.5px;
   padding: 0;
-  background-color: #313131; */
+  background-color: #313131;
 }
 
 /* .card__time {

@@ -1,7 +1,18 @@
 import "../MoviesCard/MoviesCard.css"
 import "../../fonts/inter-3.13/inter-web/inter.css"
+import { useState } from 'react'
+
 
 function MoviesCard(props) {
+    const [isLikeMovie, setLikeMenu] = useState(false)
+
+    function likeMenu() {
+        setLikeMenu(true)
+    }
+
+    const likeClassName = (
+        `card__like ${isLikeMovie ? 'card__like_active' : ''}`
+    )
     return(
         <div className="card">
             <div className="card__image">
@@ -9,7 +20,7 @@ function MoviesCard(props) {
                 <div className="card__image-like-wrap">
                     <p className="card__image-text">{props.nameRU}</p>
                     <div className="card__like-wrap">
-                        <button className="card__like  card__like_active"></button>
+                        <button className={`"card__like" ${likeClassName}`} onClick={likeMenu}></button>
                     </div>
                     
                 </div>
