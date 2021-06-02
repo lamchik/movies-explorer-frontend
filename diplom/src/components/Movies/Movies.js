@@ -9,13 +9,15 @@ import "../ProfileHeader/ProfileHeader.css"
 
 
 
-function Movie() {
+function Movie(props) {
     return(
         <div className="movie">
             <ProfileHeader></ProfileHeader>
             <SearchForm></SearchForm>
             <Preloader></Preloader>
-            <MoviesCardList></MoviesCardList>
+            <MoviesCardList
+                page='movies'
+            ></MoviesCardList>
             <ButtonElse></ButtonElse>
             <Footer></Footer>
         </div>

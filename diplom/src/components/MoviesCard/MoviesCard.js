@@ -5,22 +5,42 @@ import { useState } from 'react'
 
 function MoviesCard(props) {
     const [isLikeMovie, setLikeMenu] = useState(false)
+    const [isVisible, setIsVisible] = useState(false)
 
     function likeMenu() {
         setLikeMenu(true)
     }
 
     const likeClassName = (
-        `card__like ${isLikeMovie ? 'card__like_active' : ''}`
+        `${isLikeMovie ? 'card__like_active' : ''}`
     )
+
+    const isPageMovie = (
+        `${props.page === 'movies' ? 'card__like' : 'card__close'}`
+    )
+
+
+
+    function visibleClose()  {
+        setIsVisible(true)
+    }
+
+    // const classNameActive = (
+    //     `${isVisible ? '' : 'card__close-wrap_invisible'}`
+    // )
+    const isPageSavedMovie = (
+        `${props.page !== 'movies' ? 'card__close-wrap' : 'card__like-wrap'}`
+    )
+
+
     return(
         <div className="card">
             <div className="card__image">
                 <img className="card__image-img" src={props.url} alt="постер фильма"/>
                 <div className="card__image-like-wrap">
                     <p className="card__image-text">{props.nameRU}</p>
-                    <div className="card__like-wrap">
-                        <button className={`"card__like" ${likeClassName}`} onClick={likeMenu}></button>
+                    <div className={`${isPageSavedMovie}`} onMouseEnter={visibleClose}>
+                        <button className={`${isPageMovie} ${likeClassName}`} onClick={likeMenu}></button>
                     </div>
                     
                 </div>

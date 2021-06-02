@@ -6,13 +6,15 @@ import Preloader from "../Preloader/Preloader";
 import Footer from "../Footer/Footer";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
-function SavedMovies () {
+function SavedMovies (props) {
     return (
         <div className="saved-movie">
             <ProfileHeader></ProfileHeader>
             <SearchForm></SearchForm>
             <Preloader></Preloader>
-            <MoviesCardList></MoviesCardList>
+            <MoviesCardList
+                page = 'saved-movies'
+            ></MoviesCardList>
             <Footer></Footer>
         </div>
 
