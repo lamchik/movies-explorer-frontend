@@ -55,7 +55,7 @@
 
 .header-profile__user-icon {
   background-color: #313131;
-  width: 26px;
+  min-width: 26px;
   height: 30px;
   border-radius: 4px;
   display: flex;
@@ -133,7 +133,7 @@
   height: 100%;
   width: 67vw;
   z-index: 1;
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
   padding: 159px 90px 90px;
@@ -155,6 +155,9 @@
   }
   .header-profile__button {
     display: block;
+  }
+  .burger-menu_active {
+    width: 100vw;
   }
 }
 
