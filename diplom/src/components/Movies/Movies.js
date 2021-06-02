@@ -5,6 +5,9 @@ import Preloader from "../Preloader/Preloader";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Footer from "../Footer/Footer";
 import ButtonElse from "../ButtonElse/ButtonElse";
+import "../ProfileHeader/ProfileHeader.css"
+
+
 
 function Movie() {
     return(
