@@ -6,6 +6,8 @@ import Preloader from "../Preloader/Preloader";
 import Footer from "../Footer/Footer";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
+
+
 function SavedMovies (props) {
     return (
         <div className="saved-movie">
