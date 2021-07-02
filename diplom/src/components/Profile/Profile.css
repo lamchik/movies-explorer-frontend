@@ -1,7 +1,7 @@
 .profile {
   background-color: #202020;
   padding: 74px 0px 70px;
-  height: calc(100vh - 74px);
+  height: 92vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,12 @@
 }
 
 .profile__headline-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
+
 .profile__headline {
   font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
@@ -18,7 +23,7 @@
   font-size: 24px;
   line-height: 29px;
   color: #ffffff;
-  margin-bottom: 123px;
+  margin-bottom: 20vh;
 }
 
 .profile__form {
@@ -33,13 +38,20 @@
 
 .profile__form-name-text {
   font-family: 'Inter', 'Arial', sans-serif;
-
+  background-color: #202020;
+  border: none;
   font-style: normal;
   font-weight: 500;
   font-size: 11px;
   line-height: 13px;
   margin: 0;
   color: #ffffff;
+  text-align: start;
+}
+
+.profile__form-name-text-input {
+  width: 200px;
+  text-align: end;
 }
 
 .profile__line {
@@ -81,8 +93,24 @@
   transition: 0.2s linear;
 }
 
+.profile__message {
+  color: #ee3465;
+}
+
+.profile__message_invisible {
+  display: none;
+}
+
 .profile__button-exit:hover {
   opacity: 0.5;
+}
+
+.profile__form {
+  max-width: 410px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media all and (max-width: 767px) {

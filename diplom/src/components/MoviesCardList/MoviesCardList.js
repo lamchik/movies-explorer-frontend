@@ -1,31 +1,30 @@
-import MoviesCard from "../MoviesCard/MoviesCard";
-import poster from "../../images/movie.png"
-import "../MoviesCardList/MoviesCardList.css"
-import { useState } from "react";
-
-const movieUrl = "https://api.nomoreparties.co"
-
+import poster from '../../images/movie.png';
+import '../MoviesCardList/MoviesCardList.css';
+import Preloader from '../Preloader/Preloader';
+import { Suspense, lazy, useEffect } from 'react';
+const MoviesCard = lazy(() => import('../MoviesCard/MoviesCard'));
 
 function MoviesCardList(props) {
-    
+  // console.log(props.filteredMovies)
 
-    const items = props.filteredMovies.map(movie => (
-        // console.log(movie)
-        <MoviesCard
-            nameRU={movie.nameRU}
-            url={movie.image === null ? poster : (movieUrl + movie.image.url)}
-            duration={movie.duration}
-            page={props.page}
-            trailer={movie.trailerLink}
-            key={movie.id}
-        />
-        
-        ))
-        return (
-            <div className="movies-list">
-                {items}
-            </div>
-        )
+  const items = Array.from(props.filteredMovies).map((movie) => (
+    // console.log(movie),
+    <MoviesCard
+      movie={movie}
+      page={props.page}
+      key={movie.id}
+      like={props.like}
+      likedMovie={props.likedMovie}
+      onClick={props.onClick}
+      setLikeActive={props.setLikeActive}
+      likes={props.likes}
+    />
+  ));
+  return (
+    <Suspense fallback={<Preloader />}>
+      <div className="movies-list">{items}</div>
+    </Suspense>
+  );
 }
 
-export default MoviesCardList
+export default MoviesCardList;

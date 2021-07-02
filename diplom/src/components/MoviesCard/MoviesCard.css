@@ -27,6 +27,9 @@
   line-height: 16px;
   color: #fff;
   margin: 0 0 29px 0;
+  height: 17px;
+  width: 226px;
+  text-align: start;
 }
 
 .card__like-wrap {
@@ -48,7 +51,7 @@
   align-items: center;
   justify-content: center;
 }
-.card__close-wrap_invisible {
+.card__close-like-wrap_invisible {
   opacity: 0;
 }
 

@@ -81,7 +81,7 @@
   border-bottom: 1px solid #4285f4;
   width: 396px;
 }
-.entrance__button {
+.entrance__button_enabled {
   background-color: #4285f4;
   border-radius: 3px;
   color: #fff;
@@ -93,8 +93,21 @@
   transition: 0.2s linear;
   word-wrap: break-word;
 }
-.entrance__button:hover {
+.entrance__button_enabled:hover {
   opacity: 0.7;
+}
+
+.entrance__button_disabled {
+  background-color: #4285f4;
+  border-radius: 3px;
+  color: #fff;
+  opacity: 0.3;
+  cursor: auto;
+  border: none;
+  width: 396px;
+  min-height: 45px;
+  margin: 0 0 18px 0;
+  word-wrap: break-word;
 }
 
 .entrance__login {
@@ -125,10 +138,29 @@
   opacity: 0.7;
 }
 
+.entrance__form {
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.entrance__form-error_invisible {
+  display: none;
+}
+
+.entrance__form-error {
+  color: red;
+}
+
 @media all and (max-width: 767px) {
-  .entrance__button {
+  .entrance__button_enabled {
     width: 260px;
   }
+  .entrance__button_disabled {
+    width: 260px;
+  }
+
   .input:focus {
     width: 260px;
   }
