@@ -15,7 +15,8 @@ import MainApi from '../../utils/MainApi';
 import CurrentUserContext from '../../context/CurrentUserContext';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import Preloader from '../Preloader/Preloader';
-import Main from '../Main/Main';
+
+const filterMovies = (movies, query) => movies.filter((item) => item.nameRU.includes(query));
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(null);
@@ -24,20 +25,13 @@ function App() {
   const [registerError, setIsOk] = useState(false);
   const [success, setSuccess] = useState(false);
   const [message, setMessage] = useState(false);
+  const [likedMovies, setLikedMovies] = useState([]);
 
   function showError() {
     setIsOk(true);
   }
 
   const addError = `${registerError ? 'entrance__form-error' : 'entrance__form-error_invisible'}`;
-
-  function setMovieInLocalStorage(item) {
-    if (localStorage.getItem === null) {
-      localStorage.setItem('movies', item);
-    } else {
-      localStorage.getItem('movies');
-    }
-  }
 
   React.useEffect(() => {
     const token = localStorage.getItem('token');
@@ -59,8 +53,8 @@ function App() {
 
   React.useEffect(() => {
     MainApi.getUser()
-      .then((inisialUser) => {
-        setCurrentUser(inisialUser);
+      .then((initialUser) => {
+        setCurrentUser(initialUser);
       })
       .catch((err) => {
         console.log(err);
@@ -92,14 +86,24 @@ function App() {
     setLoggedIn(false);
   };
 
-  const [likedMovie, setLikedMovie] = useState([]);
 
-  function getInitialMovies() {
+  function getSavedMovies() {
+    MainApi.getMovies().then(res => {
+      localStorage.setItem('likedMovies', JSON.stringify(res));
+      setLikedMovies(res);
+    })
+  }
+
+  function getInitialMovies(search) {
     Promise.all([MoviesApi.getMovies(), MainApi.getMovies()])
       .then((res) => {
-        setMovies(res[0]);
-        setLikedMovie(res[1]);
-        console.log(res);
+        const [movies, likedMovies] = res;
+
+        setMovies(filterMovies(movies, search));
+        setLikedMovies(likedMovies);
+
+        localStorage.setItem('movies', JSON.stringify(filterMovies(movies, search)));
+        localStorage.setItem('likedMovies', JSON.stringify(likedMovies));
       })
       .catch((err) => {
         console.log(err);
@@ -120,71 +124,26 @@ function App() {
       });
   }
 
-  const likes = likedMovie.filter((item) => item.owner === currentUser._id);
-  console.log('likes', likes);
-  console.log('ikedMovie', likedMovie);
-  const [activeLike, setActivLike] = useState(false);
+  const likes = likedMovies.filter((likedMovie) => likedMovie.owner === currentUser._id);
+  function handleLikeClick(movie) {
+    const likedMovies = likes.filter((i) => i.movieId === movie.id);
+    let promise;
+    if (likedMovies.length > 0) {
+      // MainApi.deleteLike returns promise for every movie, so map will return array of promises.
+      // This array of promises will be passed to Promise.all and saved in promise variable.
+      promise = Promise.all(likedMovies.map(likedMovie => MainApi.deleteLike(likedMovie._id)))
+    } else {
+      promise = MainApi.likeMovie(movie)
+    }
 
-  function setLikeActive(movie) {
-    likedMovie.forEach((element) => {
-      if (element.movieId === movie.id) {
-        setActivLike(true);
-      } else {
-        setActivLike(false);
-      }
-    });
-  }
-
-  function checkLike(movie) {
-    MainApi.getMovies()
-      .then((res) => {
-        setLikedMovie(res);
-        const isLiked = likes.some((i) => i.movieId === movie.id);
-        if (isLiked) {
-          likes.forEach((element) => {
-            if (element.movieId === movie.id) {
-              handleDeleteLikeMovie(element);
-            }
-          });
-        } else {
-          handleLikeMovie(movie);
-        }
+    promise.then(() => {
+      return MainApi.getMovies().then(res => {
+        setLikedMovies(res)
+        localStorage.setItem('likedMovies', JSON.stringify(res));
       })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
-  function handleDeleteLikeMovie(movie) {
-    MainApi.deleteLike(movie._id)
-      .then(() => {
-        MainApi.getMovies()
-          .then((res) => {
-            setLikedMovie(res);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
-  function handleLikeMovie(movie) {
-    MainApi.likeMovie(movie)
-      .then(() => {
-        MainApi.getMovies()
-          .then((res) => {
-            setLikedMovie(res);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    }).catch((err) => {
+      console.log(err);
+    })
   }
 
   return (
@@ -196,7 +155,7 @@ function App() {
           ) : (
             <Switch>
               <Route exact path="/">
-                <Container></Container>
+                <Container/>
               </Route>
               <Route path="/signup">
                 <Register isLoggedIn={isLoggedIn} onRegister={onRegister} addError={addError} onLogin={onLogin} />
@@ -212,10 +171,11 @@ function App() {
                 component={Movie}
                 onGetMovies={getInitialMovies}
                 movies={movies}
-                handleLikeMovie={checkLike}
-                setLikeActive={setLikeActive}
-                likedMovie={likedMovie}
+                setMovies={setMovies}
+
                 likes={likes}
+                setLikes={setLikedMovies}
+                handleLikeMovie={handleLikeClick}
               />
               <ProtectedRoute
                 redirectPath="/signin"
@@ -223,11 +183,11 @@ function App() {
                 path="/saved-movies"
                 setLoggedIn={setLoggedIn}
                 component={SavedMovies}
-                handleLikeMovie={checkLike}
-                handleDeleteLikeMovie={handleDeleteLikeMovie}
-                // likeClass={likeClassName}
+                handleLikeMovie={handleLikeClick}
+                handleDeleteLikeMovie={handleLikeClick}
                 likes={likes}
-                likedMovie={likedMovie}
+                setLikes={setLikedMovies}
+                getMovies={getSavedMovies}
               />
 
               <ProtectedRoute
@@ -243,7 +203,7 @@ function App() {
               />
 
               <Route path="*">
-                <PageNotFound></PageNotFound>
+                <PageNotFound/>
               </Route>
             </Switch>
           )}

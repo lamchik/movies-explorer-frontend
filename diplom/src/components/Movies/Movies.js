@@ -1,4 +1,4 @@
-import React, { useEffect, Suspense } from 'react';
+import React, {useEffect} from 'react';
 import ProfileHeader from '../ProfileHeader/ProfileHeader';
 import '../Movies/Movies.css';
 import SearchForm from '../SearchForm/SearchForm';
@@ -6,35 +6,24 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
 import ButtonElse from '../ButtonElse/ButtonElse';
 import '../ProfileHeader/ProfileHeader.css';
-import MoviesApi from '../../utils/MoviesApi';
-import { useState } from 'react';
+import {useState} from 'react';
+
+const filterMovies = (movies, query) => movies.filter((item) => item.nameRU.includes(query));
 
 function Movie(props) {
+  const {likes, setLikes, movies, setMovies, handleLikeMovie, onGetMovies} = props;
+
   const [search, setSearch] = useState('');
-  const [query, setQuery] = useState('');
-  const [movies, setMovies] = useState([]);
-
-  function setMovieInLocalStorage() {
-    if (localStorage.getItem('movies') === null) {
-      const filteredMovies = props.movies.filter((item) => item.nameRU.includes(query));
-      localStorage.setItem('movies', JSON.stringify(filteredMovies));
-    } else {
-      const localMovies = JSON.parse(localStorage.getItem('movies'));
-      setMovies(localMovies);
-    }
-  }
-  useEffect(() => {
-    setMovieInLocalStorage();
-  }, []);
 
   useEffect(() => {
-    if (props.movies.length > 0) {
-      const filteredMovies = props.movies.filter((item) => item.nameRU.includes(query));
-      console.log('setting to LS', filteredMovies);
-      localStorage.setItem('movies', JSON.stringify(filteredMovies));
-      setMovies(filteredMovies);
+    if (localStorage.getItem('movies') !== null) {
+      setMovies(filterMovies(JSON.parse(localStorage.getItem('movies')), ""));
     }
-  }, [props]);
+
+    if (localStorage.getItem('likedMovies') !== null) {
+      setLikes(JSON.parse(localStorage.getItem('likedMovies')));
+    }
+  }, [setLikes, setMovies]);
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
@@ -43,32 +32,28 @@ function Movie(props) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    props.onGetMovies();
-    setQuery(search);
+    onGetMovies(search);
   };
 
   function onClick(movie) {
-    props.handleLikeMovie(movie);
+    handleLikeMovie(movie);
     console.log(movie);
   }
 
   return (
     <div className="movie">
-      <ProfileHeader></ProfileHeader>
-      <SearchForm onSubmit={onSubmit} onChange={updateSearch} searchValue={search}></SearchForm>
-
+      <ProfileHeader/>
+      <SearchForm onSubmit={onSubmit} onChange={updateSearch} searchValue={search}/>
       <MoviesCardList
         page="movies"
         filteredMovies={movies}
-        search={search}
-        likedMovie={props.likedMovie}
         onClick={onClick}
-        setLikeActive={props.setLikeActive}
-        likes={props.likes}
-      ></MoviesCardList>
-      <ButtonElse></ButtonElse>
-      <Footer></Footer>
+        likes={likes}
+      />
+      <ButtonElse/>
+      <Footer/>
     </div>
   );
 }
+
 export default Movie;
