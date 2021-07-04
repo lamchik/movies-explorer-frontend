@@ -15,6 +15,7 @@ import MainApi from '../../utils/MainApi';
 import CurrentUserContext from '../../context/CurrentUserContext';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import Preloader from '../Preloader/Preloader';
+import Main from "../Main/Main";
 
 const filterMovies = (movies, query) => movies.filter((item) => item.nameRU.includes(query));
 
@@ -146,6 +147,17 @@ function App() {
     })
   }
 
+  function handleDeleteMovie(movie){
+    MainApi.deleteLike(movie._id).then(() => {
+      MainApi.getMovies().then(res => {
+        setLikedMovies(res)
+        localStorage.setItem('likedMovies', JSON.stringify(res));
+      })
+    }).catch((err) => {
+      console.log(err);
+    })
+  }
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -184,11 +196,11 @@ function App() {
                 setLoggedIn={setLoggedIn}
                 component={SavedMovies}
                 handleLikeMovie={handleLikeClick}
-                handleDeleteLikeMovie={handleLikeClick}
+                handleDeleteLikeMovie={handleDeleteMovie}
                 likes={likes}
                 setLikes={setLikedMovies}
                 getMovies={getSavedMovies}
-              />
+x              />
 
               <ProtectedRoute
                 redirectPath="/signin"
@@ -197,7 +209,7 @@ function App() {
                 setLoggedIn={setLoggedIn}
                 component={Profile}
                 onSignOut={onSignOut}
-                onUpdateUser={handleUpdateUser}
+                onUpdateUser={ handleUpdateUser}
                 success={success}
                 message={message}
               />

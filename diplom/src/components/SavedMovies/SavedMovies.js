@@ -18,7 +18,7 @@ function SavedMovies(props) {
   }, []);
 
   function onClick(movie) {
-    props.handleDeleteLikeMovie(movie);
+    props.handleDeleteLikeMovie(movie)
   }
 
   return (
