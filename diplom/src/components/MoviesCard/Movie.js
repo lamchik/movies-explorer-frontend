@@ -12,6 +12,7 @@ function Movie(props) {
     let fullMinutes = minutes % 60;
     return hours + 'ч ' + fullMinutes + 'м';
   }
+  
 
   const duration = getTimeFromMinutes(movie.duration);
   const [isVisible, setIsVisible] = useState(false);

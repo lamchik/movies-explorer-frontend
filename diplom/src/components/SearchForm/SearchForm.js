@@ -7,7 +7,7 @@ import { useState } from "react";
 
 
 
-function SearchForm({onSubmit, searchValue, onChange}) {
+function SearchForm({onSubmit, searchValue, onChange, changeValue, value}) {
   
     return(
         <div className="search">
@@ -22,7 +22,10 @@ function SearchForm({onSubmit, searchValue, onChange}) {
                     </button>
                 </div>
                 <div className="search__form-checkbox-wrap">
-                    <FilterCheckbox></FilterCheckbox>
+                    <FilterCheckbox
+                      changeValue={changeValue}
+                      value={value}
+                    />
                     <p className="search__form-checkbox-text">Короткометражки</p>
                 </div>
             </form>

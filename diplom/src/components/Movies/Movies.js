@@ -12,8 +12,22 @@ const filterMovies = (movies, query) => movies.filter((item) => item.nameRU.incl
 
 function Movie(props) {
   const {likes, setLikes, movies, setMovies, handleLikeMovie, onGetMovies} = props;
-
+  const [value, setValue] = useState(false)
   const [search, setSearch] = useState('');
+
+
+  function onGetShortMovie () {
+    if (!value) {
+      setValue(true)
+      setMovies(movies.filter(movie => movie.duration <= 40))
+    }
+    else{
+      setValue(false)
+      setMovies(filterMovies(JSON.parse(localStorage.getItem('movies')), ""));
+    }
+  }
+
+
 
   useEffect(() => {
     if (localStorage.getItem('movies') !== null) {
@@ -43,7 +57,12 @@ function Movie(props) {
   return (
     <div className="movie">
       <ProfileHeader/>
-      <SearchForm onSubmit={onSubmit} onChange={updateSearch} searchValue={search}/>
+      <SearchForm
+        onSubmit={onSubmit}
+        onChange={updateSearch}
+        searchValue={search}
+        value={value}
+        changeValue={onGetShortMovie}/>
       <MoviesCardList
         page="movies"
         filteredMovies={movies}
