@@ -1,16 +1,16 @@
 import React from 'react';
-import { useState } from 'react';
+import {useState} from 'react';
 import './App.css';
 import MoviesApi from '../../utils/MoviesApi';
 import Container from '../Container/Container';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import {Route, Switch, BrowserRouter} from 'react-router-dom';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import Profile from '../Profile/Profile';
 import Movie from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
-import { authAPI } from '../../utils/MainApi';
+import {authAPI} from '../../utils/MainApi';
 import MainApi from '../../utils/MainApi';
 import CurrentUserContext from '../../context/CurrentUserContext';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
@@ -111,6 +111,12 @@ function App() {
       });
   }
 
+
+  function searchSavedMovies(search) {
+    setLikedMovies(filterMovies(likedMovies, search))
+
+  }
+
   function handleUpdateUser(object) {
     MainApi.editUser(object.name, object.email)
       .then((user) => {
@@ -126,6 +132,7 @@ function App() {
   }
 
   const likes = likedMovies.filter((likedMovie) => likedMovie.owner === currentUser._id);
+
   function handleLikeClick(movie) {
     const likedMovies = likes.filter((i) => i.movieId === movie.id);
     let promise;
@@ -147,7 +154,7 @@ function App() {
     })
   }
 
-  function handleDeleteMovie(movie){
+  function handleDeleteMovie(movie) {
     MainApi.deleteLike(movie._id).then(() => {
       MainApi.getMovies().then(res => {
         setLikedMovies(res)
@@ -163,17 +170,17 @@ function App() {
       <div className="App">
         <CurrentUserContext.Provider value={currentUser}>
           {isLoggedIn === null ? (
-            <Preloader />
+            <Preloader/>
           ) : (
             <Switch>
               <Route exact path="/">
                 <Container/>
               </Route>
               <Route path="/signup">
-                <Register isLoggedIn={isLoggedIn} onRegister={onRegister} addError={addError} onLogin={onLogin} />
+                <Register isLoggedIn={isLoggedIn} onRegister={onRegister} addError={addError} onLogin={onLogin}/>
               </Route>
               <Route path="/signin">
-                <Login isLoggedIn={isLoggedIn} onLogin={onLogin} addError={addError} />
+                <Login isLoggedIn={isLoggedIn} onLogin={onLogin} addError={addError}/>
               </Route>
               <ProtectedRoute
                 redirectPath="/signin"
@@ -200,7 +207,8 @@ function App() {
                 likes={likes}
                 setLikes={setLikedMovies}
                 getMovies={getSavedMovies}
-x              />
+                onGetMovies={searchSavedMovies}
+                x/>
 
               <ProtectedRoute
                 redirectPath="/signin"
@@ -209,7 +217,7 @@ x              />
                 setLoggedIn={setLoggedIn}
                 component={Profile}
                 onSignOut={onSignOut}
-                onUpdateUser={ handleUpdateUser}
+                onUpdateUser={handleUpdateUser}
                 success={success}
                 message={message}
               />
