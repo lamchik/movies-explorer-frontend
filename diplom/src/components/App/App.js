@@ -27,6 +27,7 @@ function App() {
   const [success, setSuccess] = useState(false);
   const [message, setMessage] = useState(false);
   const [likedMovies, setLikedMovies] = useState([]);
+  const [preloader, setPreloader] = useState(false)
 
   function showError() {
     setIsOk(true);
@@ -96,8 +97,10 @@ function App() {
   }
 
   function getInitialMovies(search) {
+    setPreloader(true)
     Promise.all([MoviesApi.getMovies(), MainApi.getMovies()])
       .then((res) => {
+        setPreloader(false)
         const [movies, likedMovies] = res;
 
         setMovies(filterMovies(movies, search));
@@ -195,6 +198,7 @@ function App() {
                 likes={likes}
                 setLikes={setLikedMovies}
                 handleLikeMovie={handleLikeClick}
+                preloader={preloader}
               />
               <ProtectedRoute
                 redirectPath="/signin"

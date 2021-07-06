@@ -50,9 +50,9 @@
   background-color: #202020;
 }
 
-/* .preloader_invisible {
+.preloader_invisible {
   display: none;
-} */
+}
 
 .preloader__container {
   width: 100px;

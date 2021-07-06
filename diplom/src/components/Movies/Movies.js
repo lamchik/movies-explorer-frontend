@@ -7,11 +7,12 @@ import Footer from '../Footer/Footer';
 import ButtonElse from '../ButtonElse/ButtonElse';
 import '../ProfileHeader/ProfileHeader.css';
 import {useState} from 'react';
+import Preloader from "../Preloader/Preloader";
 
 const filterMovies = (movies, query) => movies.filter((item) => item.nameRU.includes(query));
 
 function Movie(props) {
-  const {likes, setLikes, movies, setMovies, handleLikeMovie, onGetMovies} = props;
+  const {likes, setLikes, movies, setMovies, handleLikeMovie, onGetMovies, preloader} = props;
   const [value, setValue] = useState(false)
   const [search, setSearch] = useState('');
 
@@ -63,6 +64,9 @@ function Movie(props) {
         searchValue={search}
         value={value}
         changeValue={onGetShortMovie}/>
+      <Preloader
+        preloader={preloader}
+      />
       <MoviesCardList
         page="movies"
         filteredMovies={movies}

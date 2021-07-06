@@ -1,8 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
+import {useState} from 'react';
 import './Preloader.css'
 
+function Preloader({preloader}) {
+      const isPreloaderActive = (
+        `${preloader ? '' : 'preloader_invisible'}`
+    )
 
-
+  return (
+    <div className={`preloader ${isPreloaderActive}`}>
+      <div className="preloader__container">
+        <span className="preloader__round"></span>
+      </div>
+    </div>
+  );
+}
+export default  Preloader
 // const Preloader = () => {
 
 //     const [preloader, setPreloader] = useState(false)
@@ -32,22 +45,22 @@ import './Preloader.css'
 // };
 
 
-export default class Preloader extends Component{
-    constructor(props){
-        super(props);
-        this.viewRef = React.createRef();
-    }
-    render(){
-        return (
-            <div ref={this.viewRef} className="preloader">
-                <div className="preloader__container">
-                    <span className="preloader__round"></span>
-                </div>
-            </div>
-        );
-    }
-
-    componentWillUnmount(){
-       this.viewRef.current.style.opacity = 0;
-    }
-}
+// export default class Preloader extends Component{
+//     constructor(props){
+//         super(props);
+//         this.viewRef = React.createRef();
+//     }
+//     render(){
+//         return (
+//             <div ref={this.viewRef} className="preloader">
+//                 <div className="preloader__container">
+//                     <span className="preloader__round"></span>
+//                 </div>
+//             </div>
+//         );
+//     }
+//
+//     componentWillUnmount(){
+//        this.viewRef.current.style.opacity = 0;
+//     }
+// }
