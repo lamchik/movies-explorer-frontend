@@ -28,6 +28,7 @@ function App() {
   const [message, setMessage] = useState(false);
   const [likedMovies, setLikedMovies] = useState([]);
   const [preloader, setPreloader] = useState(false)
+  const [tooltip, setTooltip] = useState(false)
 
   function showError() {
     setIsOk(true);
@@ -103,8 +104,17 @@ function App() {
         setPreloader(false)
         const [movies, likedMovies] = res;
 
+
         setMovies(filterMovies(movies, search));
         setLikedMovies(likedMovies);
+        const visibleMovies = filterMovies(movies, search);
+        if (visibleMovies.length === 0) {
+          setTooltip(true)
+          // console.log("HERE", tooltip)
+        } else {
+          setTooltip(false)
+          // console.log("HERE 2", tooltip)
+        }
 
         localStorage.setItem('movies', JSON.stringify(filterMovies(movies, search)));
         localStorage.setItem('likedMovies', JSON.stringify(likedMovies));
@@ -199,6 +209,7 @@ function App() {
                 setLikes={setLikedMovies}
                 handleLikeMovie={handleLikeClick}
                 preloader={preloader}
+                tooltip={tooltip}
               />
               <ProtectedRoute
                 redirectPath="/signin"
