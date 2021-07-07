@@ -30,6 +30,7 @@ function App() {
   const [preloader, setPreloader] = useState(false)
   const [tooltip, setTooltip] = useState(false)
   const [counterClick, setCounterClick] = useState(0)
+  const [buttonElse, setButtonElse] = useState(false)
 
 
   function showError() {
@@ -107,6 +108,12 @@ function App() {
         const [movies, likedMovies] = res;
 
         const filteredMovies = filterMovies(movies, search);
+        if(filteredMovies.length > 3) {
+          setButtonElse(true)
+        }
+        else {
+          setButtonElse(false)
+        }
         const deviceWidth = window.screen.width
         let count = 0
         if (1280 <= deviceWidth) {
@@ -226,6 +233,7 @@ function App() {
                 filteredMovies={movies}
                 counterClick={counterClick}
                 setCounterClick={setCounterClick}
+                buttonElse={buttonElse}
               />
               <ProtectedRoute
                 redirectPath="/signin"

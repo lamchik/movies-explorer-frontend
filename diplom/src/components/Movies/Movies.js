@@ -24,7 +24,8 @@ function Movie(props) {
     tooltip,
     filteredMovies,
     counterClick,
-    setCounterClick
+    setCounterClick,
+    buttonElse
   } = props;
   const [value, setValue] = useState(false)
   const [search, setSearch] = useState('');
@@ -130,6 +131,7 @@ function Movie(props) {
       <ButtonElse
         handleClick={addRowWithMovie}
         filteredMovies={filteredMovies}
+        buttonElse={buttonElse}
       />
       <Footer/>
     </div>
