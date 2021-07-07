@@ -13,7 +13,19 @@ import Tooltip from "../../Tooltip/Tooltip";
 const filterMovies = (movies, query) => movies.filter((item) => item.nameRU.includes(query));
 
 function Movie(props) {
-  const {likes, setLikes, movies, setMovies, handleLikeMovie, onGetMovies, preloader, tooltip} = props;
+  const {
+    likes,
+    setLikes,
+    movies,
+    setMovies,
+    handleLikeMovie,
+    onGetMovies,
+    preloader,
+    tooltip,
+    filteredMovies,
+    counterClick,
+    setCounterClick
+  } = props;
   const [value, setValue] = useState(false)
   const [search, setSearch] = useState('');
 
@@ -54,6 +66,46 @@ function Movie(props) {
     console.log(movie);
   }
 
+  console.log(JSON.parse(localStorage.getItem('movies')))
+
+  function addRowWithMovie(movies) {
+
+    setCounterClick(counterClick + 4)
+    const allMovies = JSON.parse(localStorage.getItem('movies'))
+
+    let count = 0
+    let quantity = 0
+    let a = 0
+    if (1280 <= window.screen.width) {
+      count = 12
+      quantity = 4
+      a = count + counterClick
+      console.log("a", a)
+      let deletedMovies = allMovies.splice(a, quantity)
+
+      movies.push.apply(movies, deletedMovies)
+
+    }
+    if (768 <= window.screen.width && window.screen.width < 1280) {
+      count = 8
+      quantity = 2
+      a = count + counterClick
+      let deletedMovies = allMovies.splice(a, quantity)
+      movies.push.apply(movies, deletedMovies)
+    }
+    if (320 <= window.screen.width && window.screen.width < 768) {
+      count = 5
+      quantity = 1
+      a = count + counterClick
+      let deletedMovies = allMovies.splice(a, quantity)
+      movies.push.apply(movies, deletedMovies)
+
+    } else {
+    }
+
+  }
+
+
   return (
     <div className="movie">
       <ProfileHeader/>
@@ -75,7 +127,10 @@ function Movie(props) {
         onClick={onClick}
         likes={likes}
       />
-      <ButtonElse/>
+      <ButtonElse
+        handleClick={addRowWithMovie}
+        filteredMovies={filteredMovies}
+      />
       <Footer/>
     </div>
   );

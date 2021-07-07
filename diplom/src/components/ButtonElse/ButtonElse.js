@@ -1,10 +1,14 @@
 import "../../fonts/inter-3.13/inter-web/inter.css"
 import "../ButtonElse/ButtonElse.css"
 
-function ButtonElse() {
+function ButtonElse({handleClick, filteredMovies}) {
+  function  onClick() {
+    handleClick(filteredMovies)
+  }
+
     return( 
         <div className="button-else">
-            <button className="button-else__button">
+            <button className="button-else__button" onClick={onClick}>
                 <p className="button-else__text">Ещё</p>
             </button>
         </div>

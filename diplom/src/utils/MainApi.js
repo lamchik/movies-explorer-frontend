@@ -61,7 +61,7 @@ class MainApi {
         trailer:
           data.trailerLink === ('God Bless Ozzy Osbourne' || null) ? 'https://www.kinopoisk.ru/' : data.trailerLink,
         nameRU: data.nameRU === '' ? 'Пусто' : data.nameRU,
-        nameEN: data.nameEN === ('' || null) ? 'Пусто' : data.nameEN,
+        nameEN: data.nameEN === '' || null ? 'Пусто' : data.nameEN,
         thumbnail:
           'https://api.nomoreparties.co/' + data.image.formats.thumbnail.hash + data.image.formats.thumbnail.hash.ext,
         movieId: data.id,

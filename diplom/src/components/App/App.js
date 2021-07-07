@@ -29,6 +29,8 @@ function App() {
   const [likedMovies, setLikedMovies] = useState([]);
   const [preloader, setPreloader] = useState(false)
   const [tooltip, setTooltip] = useState(false)
+  const [counterClick, setCounterClick] = useState(0)
+
 
   function showError() {
     setIsOk(true);
@@ -104,19 +106,30 @@ function App() {
         setPreloader(false)
         const [movies, likedMovies] = res;
 
+        const filteredMovies = filterMovies(movies, search);
+        const deviceWidth = window.screen.width
+        let count = 0
+        if (1280 <= deviceWidth) {
+          count = 12
+        }
+        if (768 <= deviceWidth && deviceWidth < 1280) {
+          count = 8
+        }
+        if (320 <= deviceWidth && deviceWidth < 768) {
+          count = 5
+        }
 
-        setMovies(filterMovies(movies, search));
+        setMovies(filteredMovies.slice(0, count));
         setLikedMovies(likedMovies);
-        const visibleMovies = filterMovies(movies, search);
-        if (visibleMovies.length === 0) {
+
+        if (filteredMovies.length === 0) {
           setTooltip(true)
-          // console.log("HERE", tooltip)
         } else {
           setTooltip(false)
-          // console.log("HERE 2", tooltip)
         }
 
         localStorage.setItem('movies', JSON.stringify(filterMovies(movies, search)));
+        // localStorage.setItem('movies', JSON.stringify(filterMovies(movies, search)));
         localStorage.setItem('likedMovies', JSON.stringify(likedMovies));
       })
       .catch((err) => {
@@ -210,6 +223,9 @@ function App() {
                 handleLikeMovie={handleLikeClick}
                 preloader={preloader}
                 tooltip={tooltip}
+                filteredMovies={movies}
+                counterClick={counterClick}
+                setCounterClick={setCounterClick}
               />
               <ProtectedRoute
                 redirectPath="/signin"
