@@ -15,7 +15,6 @@ import MainApi from '../../utils/MainApi';
 import CurrentUserContext from '../../context/CurrentUserContext';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import Preloader from '../Preloader/Preloader';
-import Main from "../Main/Main";
 
 const filterMovies = (movies, query) => movies.filter((item) => item.nameRU.includes(query));
 
@@ -29,9 +28,6 @@ function App() {
   const [likedMovies, setLikedMovies] = useState([]);
   const [preloader, setPreloader] = useState(false)
   const [tooltip, setTooltip] = useState(false)
-  const [counterClick, setCounterClick] = useState(0)
-  const [buttonElse, setButtonElse] = useState(false)
-
 
   function showError() {
     setIsOk(true);
@@ -108,25 +104,7 @@ function App() {
         const [movies, likedMovies] = res;
 
         const filteredMovies = filterMovies(movies, search);
-        if(filteredMovies.length > 3) {
-          setButtonElse(true)
-        }
-        else {
-          setButtonElse(false)
-        }
-        const deviceWidth = window.screen.width
-        let count = 0
-        if (1280 <= deviceWidth) {
-          count = 12
-        }
-        if (768 <= deviceWidth && deviceWidth < 1280) {
-          count = 8
-        }
-        if (320 <= deviceWidth && deviceWidth < 768) {
-          count = 5
-        }
-
-        setMovies(filteredMovies.slice(0, count));
+        setMovies(filteredMovies);
         setLikedMovies(likedMovies);
 
         if (filteredMovies.length === 0) {
@@ -143,6 +121,7 @@ function App() {
         console.log(err);
       });
   }
+  console.log('movies', movies)
 
 
   function searchSavedMovies(search) {
@@ -230,10 +209,6 @@ function App() {
                 handleLikeMovie={handleLikeClick}
                 preloader={preloader}
                 tooltip={tooltip}
-                filteredMovies={movies}
-                counterClick={counterClick}
-                setCounterClick={setCounterClick}
-                buttonElse={buttonElse}
               />
               <ProtectedRoute
                 redirectPath="/signin"
@@ -247,7 +222,7 @@ function App() {
                 setLikes={setLikedMovies}
                 getMovies={getSavedMovies}
                 onGetMovies={searchSavedMovies}
-                x/>
+              />
 
               <ProtectedRoute
                 redirectPath="/signin"

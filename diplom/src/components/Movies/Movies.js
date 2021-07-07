@@ -4,11 +4,21 @@ import '../Movies/Movies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Footer from '../Footer/Footer';
-import ButtonElse from '../ButtonElse/ButtonElse';
+import ButtonMore from '../ButtonElse/ButtonElse';
 import '../ProfileHeader/ProfileHeader.css';
 import {useState} from 'react';
 import Preloader from "../Preloader/Preloader";
 import Tooltip from "../../Tooltip/Tooltip";
+
+const getDefaultCountAndQuantityForMoreButton = () => {
+  if (1280 <= window.screen.width) {
+    return {defaultCount: 12, quantityForMore: 4}
+  } else if (768 <= window.screen.width && window.screen.width < 1280) {
+    return {defaultCount: 8, quantityForMore: 2}
+  } else {
+    return {defaultCount: 5, quantityForMore: 1}
+  }
+}
 
 const filterMovies = (movies, query) => movies.filter((item) => item.nameRU.includes(query));
 
@@ -22,25 +32,11 @@ function Movie(props) {
     onGetMovies,
     preloader,
     tooltip,
-    filteredMovies,
-    counterClick,
-    setCounterClick,
-    buttonElse
   } = props;
-  const [value, setValue] = useState(false)
+
+  const [showShortMovies, setShowShortMovies] = useState(false)
   const [search, setSearch] = useState('');
-
-
-  function onGetShortMovie() {
-    if (!value) {
-      setValue(true)
-      setMovies(movies.filter(movie => movie.duration <= 40))
-    } else {
-      setValue(false)
-      setMovies(filterMovies(JSON.parse(localStorage.getItem('movies')), ""));
-    }
-  }
-
+  const [timesMoreButtonPressed, setTimesMoreButtonPressed] = useState(0)
 
   useEffect(() => {
     if (localStorage.getItem('movies') !== null) {
@@ -52,9 +48,13 @@ function Movie(props) {
     }
   }, [setLikes, setMovies]);
 
+  function toggleShowShortMovies() {
+    setShowShortMovies(!showShortMovies)
+  }
+  const filteredMovies = showShortMovies ? movies.filter(movie => movie.duration <= 40) : movies
+
   const updateSearch = (e) => {
     setSearch(e.target.value);
-    console.log(search);
   };
 
   const onSubmit = (e) => {
@@ -64,49 +64,15 @@ function Movie(props) {
 
   function onClick(movie) {
     handleLikeMovie(movie);
-    console.log(movie);
   }
 
-  console.log(JSON.parse(localStorage.getItem('movies')))
+  const {defaultCount, quantityForMore} = getDefaultCountAndQuantityForMoreButton()
 
-  function addRowWithMovie(movies) {
-
-    setCounterClick(counterClick + 4)
-    const allMovies = JSON.parse(localStorage.getItem('movies'))
-
-    let count = 0
-    let quantity = 0
-    let a = 0
-    if (1280 <= window.screen.width) {
-      count = 12
-      quantity = 4
-      a = count + counterClick
-      console.log("a", a)
-      let deletedMovies = allMovies.splice(a, quantity)
-
-      movies.push.apply(movies, deletedMovies)
-
-    }
-    if (768 <= window.screen.width && window.screen.width < 1280) {
-      count = 8
-      quantity = 2
-      a = count + counterClick
-      let deletedMovies = allMovies.splice(a, quantity)
-      movies.push.apply(movies, deletedMovies)
-    }
-    if (320 <= window.screen.width && window.screen.width < 768) {
-      count = 5
-      quantity = 1
-      a = count + counterClick
-      let deletedMovies = allMovies.splice(a, quantity)
-      movies.push.apply(movies, deletedMovies)
-
-    } else {
-    }
-
+  const onMoreButtonClick = () => {
+    setTimesMoreButtonPressed(timesMoreButtonPressed+1)
   }
 
-
+  const moviesToRender =  filteredMovies.slice(0, defaultCount + timesMoreButtonPressed*quantityForMore)
   return (
     <div className="movie">
       <ProfileHeader/>
@@ -114,8 +80,8 @@ function Movie(props) {
         onSubmit={onSubmit}
         onChange={updateSearch}
         searchValue={search}
-        value={value}
-        changeValue={onGetShortMovie}/>
+        value={showShortMovies}
+        changeValue={toggleShowShortMovies}/>
       <Tooltip
         tooltip={tooltip}
       />
@@ -124,14 +90,13 @@ function Movie(props) {
       />
       <MoviesCardList
         page="movies"
-        filteredMovies={movies}
+        filteredMovies={moviesToRender}
         onClick={onClick}
         likes={likes}
       />
-      <ButtonElse
-        handleClick={addRowWithMovie}
-        filteredMovies={filteredMovies}
-        buttonElse={buttonElse}
+      <ButtonMore
+        handleClick={onMoreButtonClick}
+        show={moviesToRender.length < filteredMovies.length}
       />
       <Footer/>
     </div>
