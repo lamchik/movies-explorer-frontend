@@ -6,8 +6,6 @@ function MoviesCardList(props) {
 
   const items = Array.from(filteredMovies).map((movie) => (
     <Movie
-
-
       key={movie.id || movie._id}
 
       movie={movie}

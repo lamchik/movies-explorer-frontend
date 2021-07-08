@@ -10,16 +10,22 @@ import MainApi from '../../utils/MainApi'
 
 function Profile(props) {
     const currentUser = React.useContext(CurrentUserContext);
+    // const form = useFormWithValidation()
     const form = useFormWithValidation({userName: "", email: ""})
 
     useEffect(() => {
         if(currentUser.name !== undefined) {  
             form.setValues({userName: currentUser.name, email: currentUser.email})
         }
-      }, [currentUser]) 
+      }, [currentUser])
+
+    const addClass = (
+      `${form.isValid ? 'profile__button-edit_enabled': 'profile__button-edit_disabled'}`
+    )
     
     function handleEditProfile(e) {
         e.preventDefault();
+        console.log(form.values)
         props.onUpdateUser({
             name: form.values.userName,
             email: form.values.email,
@@ -33,11 +39,11 @@ function Profile(props) {
             <div className="profile">
                 <div className="profile__headline-form">
                     <div className="profile__headline">Привет, {currentUser.name}!</div>
-                    <form className="profile__form">
+                    <form className="profile__form" onSubmit={handleEditProfile}>
                         <div className="profile__form-name-wrap">
                             <div className="profile__form-name">
                                 <p className="profile__form-name-text">Имя</p>
-                                <input className="profile__form-name-text profile__form-name-text-input" type="text" name="userName" pattern="^[A-zА-яё -]+$" maxLength={200} value={form.values['userName']} onChange={form.handleChange}/>
+                                <input className="profile__form-name-text profile__form-name-text-input" type="text" name="userName" required pattern="^[A-zА-яё -]+$" minLength={1} maxLength={200} value={form.values['userName']} onChange={form.handleChange}/>
                             </div>
                             <hr className="profile__line entrance__form-line"></hr>
                             <div className="profile__form-name">
@@ -47,7 +53,7 @@ function Profile(props) {
                         </div>
                         <div className="profile__button">
                             <p className={`${props.message ? 'profile__message' : 'profile__message_invisible'}`}>{props.success ? "Данные обновлены!" : "Ой. Что-то пошло не так( Попробуйте ещё раз."}</p>
-                            <button className="profile__button-edit" onClick={handleEditProfile}>Редактировать</button>
+                            <button className={addClass}>Редактировать</button>
                             <button className="profile__button-exit" onClick={props.onSignOut}>Выйти из аккаунта</button>
                         </div>
                     </form>

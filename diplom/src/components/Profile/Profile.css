@@ -63,7 +63,7 @@
   flex-direction: column;
 }
 
-.profile__button-edit {
+.profile__button-edit_enabled {
   font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -76,7 +76,7 @@
   transition: 0.2s linear;
   margin-bottom: 16px;
 }
-.profile__button-edit:hover {
+.profile__button-edit_enabled:hover {
   opacity: 0.5;
 }
 
@@ -91,6 +91,18 @@
   border: none;
   background-color: #202020;
   transition: 0.2s linear;
+}
+
+.profile__button-edit_disabled {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #ffffff;
+  border: none;
+  background-color: #202020;
+  opacity: 0.5;
 }
 
 .profile__message {

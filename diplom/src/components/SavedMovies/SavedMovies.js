@@ -11,8 +11,6 @@ function SavedMovies(props) {
   const [search, setSearch] = useState('');
   const [value, setValue] = useState(false)
 
-  const filterSavedMovies = (movies, query) => movies.filter((item) => item.nameRU.includes(query));
-
   function onGetShortMovie () {
     if (!value) {
       setValue(true)
