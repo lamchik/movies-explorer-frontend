@@ -15,6 +15,9 @@ import MainApi from '../../utils/MainApi';
 import CurrentUserContext from '../../context/CurrentUserContext';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import Preloader from '../Preloader/Preloader';
+import Header from "../Header/Header";
+import Main from "../Main/Main";
+import Footer from "../Footer/Footer";
 
 const filterMovies = (movies, query) => movies.filter((item) => item.nameRU.includes(query));
 
@@ -121,6 +124,7 @@ function App() {
         console.log(err);
       });
   }
+
   console.log('movies', movies)
 
 
@@ -186,7 +190,9 @@ function App() {
           ) : (
             <Switch>
               <Route exact path="/">
-                <Container/>
+                <Container
+                  isLoggedIn={isLoggedIn}
+                />
               </Route>
               <Route path="/signup">
                 <Register isLoggedIn={isLoggedIn} onRegister={onRegister} addError={addError} onLogin={onLogin}/>
