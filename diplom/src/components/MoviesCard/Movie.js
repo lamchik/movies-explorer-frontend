@@ -12,7 +12,7 @@ function Movie(props) {
     let fullMinutes = minutes % 60;
     return hours + 'ч ' + fullMinutes + 'м';
   }
-  
+
 
   const duration = getTimeFromMinutes(movie.duration);
   const [isVisible, setIsVisible] = useState(false);
@@ -47,7 +47,7 @@ function Movie(props) {
   return (
     <div className="card" onMouseOver={visibleButton}>
       <div className="card__image">
-        <a className="card__image-img" href={movie.trailer} target="blank">
+        <a className="card__image-img" href={movie.trailerLink || movie.trailer} target="blank">
           <img className="card__image-img" src={imageUrl} alt="постер фильма" />
         </a>
         <div className="card__image-like-wrap">
