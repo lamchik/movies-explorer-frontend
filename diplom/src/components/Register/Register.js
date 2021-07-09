@@ -36,21 +36,21 @@ function Register(props) {
                     </Link>
                     <h2 className="entrance__headline">Добро пожаловать!</h2>
                 </div>
-                <form className="entrance__form" autocomplete="off" onSubmit={handleSubmit}>
+                <form className="entrance__form" autoComplete="off" onSubmit={handleSubmit}>
                     <div className="entrance__form-input">
                         <div className="entrance__input">
                             <p className="entrance__form-headline">Имя</p>
-                            <input className="input input__name" type="text" pattern="^[A-zА-яё -]+$" placeholder="Иван" name="name" required maxLength={200} value={form.values["name"]} onChange={form.handleChange}/>
+                            <input className="input input__name" type="text" pattern="^[A-zА-яё -]+$" placeholder="Иван" name="name" required maxLength={200} value={form.values["name"] || ""} onChange={form.handleChange}/>
                             <hr className="entrance__form-line"/>
                         </div>
                         <div className="entrance__input">
                             <p className="entrance__form-headline">E-mail</p>
-                            <input className="input input__email" type="email" placeholder="ivan@ivan.ru" name="email" required value={form.values["email"]} onChange={form.handleChange}/>
+                            <input className="input input__email" type="email" placeholder="ivan@ivan.ru" name="email" required value={form.values["email"] || ""} onChange={form.handleChange}/>
                             <hr className="entrance__form-line"/>
                         </div>
                         <div className="entrance__input">
                             <p className="entrance__form-headline">Пароль</p>
-                            <input className="input input__password" type="password" placeholder="введите пароль" name="password" required minLength={8} maxLength={200} value={form.values["password"]} onChange={form.handleChange}/>
+                            <input className="input input__password" type="password" placeholder="введите пароль" name="password" required minLength={8} maxLength={200} value={form.values["password"] || ""} onChange={form.handleChange}/>
                             <hr className="entrance__form-line"/>
                         </div>
                     </div>

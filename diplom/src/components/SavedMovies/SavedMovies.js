@@ -35,7 +35,6 @@ function SavedMovies(props) {
   }
   const updateSearch = (e) => {
     setSearch(e.target.value);
-    console.log(search);
   };
 
   const onSubmit = (e) => {

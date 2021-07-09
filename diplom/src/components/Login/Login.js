@@ -12,7 +12,6 @@ function Login(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(form.values)
         props.onLogin(form.values["email"], form.values["password"])
     }
 
@@ -40,12 +39,12 @@ function Login(props) {
                     <div className="entrance__form-input">
                         <div className="entrance__input">
                             <p className="entrance__form-headline">E-mail</p>
-                            <input className="input" type="email" placeholder="ivan@ivan.ru" required name="email" value={form.values["email"]} onChange={form.handleChange}/>
+                            <input className="input" type="email" placeholder="ivan@ivan.ru" required name="email" value={form.values["email"] || ""} onChange={form.handleChange}/>
                             <hr className="entrance__form-line"/>
                         </div>
                         <div className="entrance__input">
                             <p className="entrance__form-headline">Пароль</p>
-                            <input className="input" type="password" name="password" placeholder="введите пароль" required minLength={7} maxLength={200} value={form.values["password"]} onChange={form.handleChange}/>
+                            <input className="input" type="password" name="password" placeholder="введите пароль" required minLength={7} maxLength={200} value={form.values["password"] || ""} onChange={form.handleChange}/>
                             <hr className="entrance__form-line"/>
                         </div>
                     </div>

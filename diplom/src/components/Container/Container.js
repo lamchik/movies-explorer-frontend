@@ -6,10 +6,6 @@ import ProfileHeader from '../ProfileHeader/ProfileHeader';
 
 
 function Container({isLoggedIn}) {
-
-    console.log(isLoggedIn)
-
-
   return (
     <div className="container">
       {isLoggedIn ? <ProfileHeader/> : <Header/>}

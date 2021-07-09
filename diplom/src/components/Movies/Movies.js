@@ -20,8 +20,6 @@ const getDefaultCountAndQuantityForMoreButton = () => {
   }
 }
 
-const filterMovies = (movies, query) => movies.filter((item) => item.nameRU.includes(query));
-
 function Movie(props) {
   const {
     likes,
@@ -39,10 +37,6 @@ function Movie(props) {
   const [timesMoreButtonPressed, setTimesMoreButtonPressed] = useState(0)
 
   useEffect(() => {
-    if (localStorage.getItem('movies') !== null) {
-      setMovies(filterMovies(JSON.parse(localStorage.getItem('movies')), ""));
-    }
-
     if (localStorage.getItem('likedMovies') !== null) {
       setLikes(JSON.parse(localStorage.getItem('likedMovies')));
     }

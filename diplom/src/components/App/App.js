@@ -32,6 +32,8 @@ function App() {
   const [preloader, setPreloader] = useState(false)
   const [tooltip, setTooltip] = useState(false)
 
+  // const [searchQuery, setSearchQuery] = useState('')
+
   function showError() {
     setIsOk(true);
   }
@@ -100,33 +102,41 @@ function App() {
   }
 
   function getInitialMovies(search) {
-    setPreloader(true)
-    Promise.all([MoviesApi.getMovies(), MainApi.getMovies()])
-      .then((res) => {
-        setPreloader(false)
-        const [movies, likedMovies] = res;
+    if (JSON.parse(localStorage.getItem('movies')) !== null) {
+      const allMovies = JSON.parse(localStorage.getItem('movies'))
+      const filteredMovies = filterMovies(allMovies, search);
+      setMovies(filteredMovies)
+      if (filteredMovies.length === 0) {
+        setTooltip(true)
+      } else {
+        setTooltip(false)
+      }
+    } else {
+      setPreloader(true)
+      Promise.all([MoviesApi.getMovies(), MainApi.getMovies()])
+        .then((res) => {
+          setPreloader(false)
+          const [movies, likedMovies] = res;
 
-        const filteredMovies = filterMovies(movies, search);
-        setMovies(filteredMovies);
-        setLikedMovies(likedMovies);
+          const filteredMovies = filterMovies(movies, search);
+          setMovies(filteredMovies);
+          setLikedMovies(likedMovies);
 
-        if (filteredMovies.length === 0) {
-          setTooltip(true)
-        } else {
-          setTooltip(false)
-        }
+          if (filteredMovies.length === 0) {
+            setTooltip(true)
+          } else {
+            setTooltip(false)
+          }
 
-        localStorage.setItem('movies', JSON.stringify(filterMovies(movies, search)));
-        // localStorage.setItem('movies', JSON.stringify(filterMovies(movies, search)));
-        localStorage.setItem('likedMovies', JSON.stringify(likedMovies));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+          localStorage.setItem('movies', JSON.stringify(movies))
+          // localStorage.setItem('movies', JSON.stringify(filterMovies(movies, search)));
+          localStorage.setItem('likedMovies', JSON.stringify(likedMovies));
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }
-
-  console.log('movies', movies)
-
 
   function searchSavedMovies(search) {
     setLikedMovies(filterMovies(likedMovies, search))

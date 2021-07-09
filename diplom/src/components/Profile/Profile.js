@@ -25,17 +25,15 @@ function Profile(props) {
     
     function handleEditProfile(e) {
         e.preventDefault();
-        console.log(form.values)
         props.onUpdateUser({
             name: form.values.userName,
             email: form.values.email,
         });
     }
 
-
     return (
         <>
-            <ProfileHeader></ProfileHeader>
+            <ProfileHeader/>
             <div className="profile">
                 <div className="profile__headline-form">
                     <div className="profile__headline">Привет, {currentUser.name}!</div>
@@ -45,7 +43,7 @@ function Profile(props) {
                                 <p className="profile__form-name-text">Имя</p>
                                 <input className="profile__form-name-text profile__form-name-text-input" type="text" name="userName" required pattern="^[A-zА-яё -]+$" minLength={1} maxLength={200} value={form.values['userName']} onChange={form.handleChange}/>
                             </div>
-                            <hr className="profile__line entrance__form-line"></hr>
+                            <hr className="profile__line entrance__form-line"/>
                             <div className="profile__form-name">
                                 <p className="profile__form-name-text">E-mail</p>
                                 <input className="profile__form-name-text profile__form-name-text-input" type="email" name="email" required value={form.values['email']} onChange={form.handleChange}/>

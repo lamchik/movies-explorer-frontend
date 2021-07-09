@@ -52,16 +52,16 @@ class MainApi {
       method: 'POST',
       headers: this.headers,
       body: JSON.stringify({
-        country: data.country === ('' || null) ? 'Пусто' : data.country,
-        director: data.director === '' ? 'Пусто' : data.director,
+        country: data.country === '' || data.country === null ? 'Пусто' : data.country,
+        director: data.director === '' || data.director === null ? 'Пусто' : data.director,
         duration: data.duration,
         year: data.year,
-        description: data.description === '' ? 'Пусто' : data.description,
+        description: data.description === '' || data.description === null ? 'Пусто' : data.description,
         image: 'https://api.nomoreparties.co' + data.image.url,
         trailer:
-          data.trailerLink === ('God Bless Ozzy Osbourne' || null) ? 'https://www.kinopoisk.ru/' : data.trailerLink,
+          data.trailerLink === 'God Bless Ozzy Osbourne' || data.trailerLink === null ? 'https://www.kinopoisk.ru/' : data.trailerLink,
         nameRU: data.nameRU === '' ? 'Пусто' : data.nameRU,
-        nameEN: data.nameEN === '' || null ? 'Пусто' : data.nameEN,
+        nameEN: data.nameEN === '' || data.nameEN === null ? 'Пусто' : data.nameEN,
         thumbnail:
           'https://api.nomoreparties.co/' + data.image.formats.thumbnail.hash + data.image.formats.thumbnail.hash.ext,
         movieId: data.id,
@@ -114,8 +114,6 @@ class AuthAPI {
       body: JSON.stringify({ email, password }),
     }).then((res) => {
       if (res.ok) {
-        console.log(res);
-
         return res.json();
       }
       return Promise.reject(`Ошибка: ${res.status}`);
