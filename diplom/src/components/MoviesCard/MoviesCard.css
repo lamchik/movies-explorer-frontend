@@ -1,0 +1,113 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card__image {
+}
+
+.card__image-img {
+  width: 100%;
+  margin-bottom: 14px;
+  object-fit: cover;
+  height: 151px;
+}
+
+.card__image-like-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__image-text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #fff;
+  margin: 0 0 29px 0;
+  height: 17px;
+  width: 226px;
+  text-align: start;
+}
+
+.card__like-wrap {
+  width: 24px;
+  height: 24px;
+  background-color: #313131;
+  border-radius: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__close-wrap {
+  width: 24px;
+  height: 24px;
+  background-color: #313131;
+  border-radius: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card__close-like-wrap_invisible {
+  opacity: 0;
+}
+
+.card__like {
+  background-image: url(../../images/nolike.svg);
+  border: none;
+  width: 10px;
+  height: 8.5px;
+  padding: 0;
+  background-color: #313131;
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+
+.card__like_active {
+  background-image: url(../../images/like.svg);
+  border: none;
+  width: 10px;
+  height: 8.5px;
+  padding: 0;
+  background-color: #313131;
+}
+
+.card__close {
+  background-image: url(../../images/delete.svg);
+  border: none;
+  width: 8px;
+  height: 8.5px;
+  padding: 0;
+  background-color: #313131;
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+
+.card__time-line {
+  margin-bottom: 6px;
+}
+
+.card__time-text {
+  color: #8b8b8b;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  margin: 0;
+  text-align: left;
+}
+
+@media all and (max-width: 767px) {
+  .card__image-img {
+    height: 168px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1267px) {
+  .card__image-img {
+    height: 190px;
+  }
+}

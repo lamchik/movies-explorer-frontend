@@ -1,0 +1,121 @@
+.aboutme {
+  background-color: #202020;
+  padding: 110px 70px;
+}
+
+.aboutme__main-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aboutme__main {
+  width: 52vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 66px 0 0 0;
+}
+
+.aboutme__main-name {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  color: #ffff;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px 0;
+}
+
+.aboutme__main-proffession {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  color: #ffff;
+  margin: 0 0 26px 0;
+}
+
+.aboutme__main-description {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffff;
+  margin: 0 0 99px 0;
+  text-align: left;
+}
+
+.aboutme__main-social-wrap {
+  display: flex;
+}
+
+.aboutme__social {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 27px;
+  color: #ffff;
+  margin: 0 20px 0 0;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+
+.aboutme__social:hover {
+  opacity: 0.5;
+}
+
+.aboutme__photo {
+  width: 270px;
+  height: 327px;
+  border-radius: 10px;
+  background: url(../../images/lamara.jpg);
+  background-size: cover;
+  background-position: right;
+  margin-top: 66px;
+}
+
+@media all and (max-width: 767px) {
+  .aboutme {
+    padding: 60px 14px 69px;
+  }
+  .aboutme__main-wrap {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .aboutme__photo {
+    width: 292px;
+    height: 352px;
+  }
+
+  .aboutme__main {
+    width: inherit;
+  }
+
+  .aboutme__main-description {
+    margin: 0 0 40px 0;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1267px) {
+  .aboutme {
+    padding: 90px 50px;
+  }
+  .aboutme__main {
+    padding-right: 49px;
+  }
+
+  .aboutme__main-description {
+    width: 364px;
+    margin: 0 0 40px 0;
+  }
+
+  .aboutme__photo {
+    width: 255px;
+    height: 307px;
+  }
+}

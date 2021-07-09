@@ -1,0 +1,55 @@
+.button-else__button {
+  background-color: #202020;
+  width: 320px;
+  height: 36px;
+  border: 1px solid #424242;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.button-else__button:hover {
+  opacity: 0.5;
+}
+
+.button-else__text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #fff;
+}
+
+.button-else {
+  background-color: #202020;
+  width: 100%;
+  min-height: 166px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.button-else_invisible{
+  display: none;
+}
+
+/* @media all and (max-width: 767px) {
+  .movies-list {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 34px;
+    padding: 40px 10px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1267px) {
+  .movies-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 30px;
+    padding: 70px 30px;
+  }
+} */

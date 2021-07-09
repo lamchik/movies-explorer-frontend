@@ -1,0 +1,140 @@
+.about-project {
+  background-color: #202020;
+  padding: 110px 70px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.about-project__info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-project__info-steps {
+  text-align: left;
+  margin-right: 30px;
+}
+
+.about-project__info-steps-header {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffff;
+  letter-spacing: -0.04em;
+  margin: 70px 0 26px;
+  word-wrap: break-word;
+}
+
+.about-project__info-steps-text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffff;
+  word-wrap: break-word;
+}
+
+.about-project__timeline-wrap {
+  display: flex;
+  flex-direction: column;
+  padding-top: 110px;
+}
+
+.about-project__timeline-backend-frontend {
+  display: flex;
+}
+
+.about-project__timeline-backend {
+  background-color: #3ddc84;
+  width: 20vw;
+}
+
+.about-project__timeline-backend-text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
+}
+
+.about-project__timeline-frontend {
+  background-color: #303030;
+  width: 80vw;
+}
+
+.about-project__timeline-frontend-text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+}
+
+.about-project__inscription {
+  display: flex;
+  padding-top: 14px;
+}
+
+.about-project__inscription-backend {
+  width: 20vw;
+}
+
+.about-project__backend-frontend {
+  width: 80vw;
+}
+
+.about-project__inscription-backend-text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #8b8b8b;
+  margin: 0;
+}
+
+@media all and (max-width: 767px) {
+  .about-project {
+    padding: 70px 16px;
+  }
+
+  .about-project__info {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-project__timeline-backend {
+    width: 40vw;
+  }
+  .about-project__inscription-backend-text {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .about-project__timeline-backend-text {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .about-project__timeline-backend-frontend {
+    height: 35px;
+  }
+
+  .about-project__timeline-frontend-text {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .about-project__timeline-wrap {
+    padding-top: 60px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1267px) {
+  .about-project {
+    min-height: 0;
+    padding: 90px 50px;
+  }
+}
