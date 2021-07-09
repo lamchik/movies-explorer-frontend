@@ -7,7 +7,71 @@ const data = [
 {"id":5,"nameRU":"Taqwacore: The Birth of Punk Islam","nameEN":"Taqwacore: The Birth of Punk Islam","director":" Омар Маджид","country":"Канада","year":"2009","duration":80,"description":"**Don't panic, we're Islamic!**\nПакистанские лесбиянки из Ванкувера, арабские хеви-металлисты из Чикаго, группа Vote Hezbollah, ведомая иранцем из Сан-Антонио, — все это невымышленные, сплошь настоящие персонажи, запечатленные в первом документальном свидетельстве о субкультуре исламского панка. Хотя до недавнего времени исламский панк, он же taqwacore, был художественным вымыслом, вышедшим из-под пера писателя-мусульманина Майкла Мухаммеда Найта, его книга сделала это явление вполне реальным, тогда как сам он стал главным героем фильма.\n","trailerLink":"https://www.youtube.com/watch?v=JMZ8DO9F4Mo","created_at":"2020-12-02T20:35:14.745Z","updated_at":"2020-12-02T20:35:14.745Z","image":{"id":5,"name":"taqwacore2","alternativeText":"","caption":"","width":730,"height":411,"formats":{"thumbnail":{"hash":"thumbnail_taqwacore2_2f487d2e74","ext":".jpeg","mime":"image/jpeg","width":245,"height":138,"size":7.01,"path":null,"url":"/uploads/thumbnail_taqwacore2_2f487d2e74.jpeg"},"small":{"hash":"small_taqwacore2_2f487d2e74","ext":".jpeg","mime":"image/jpeg","width":500,"height":282,"size":16.29,"path":null,"url":"/uploads/small_taqwacore2_2f487d2e74.jpeg"}},"hash":"taqwacore2_2f487d2e74","ext":".jpeg","mime":"image/jpeg","size":24.89,"url":"/uploads/taqwacore2_2f487d2e74.jpeg","previewUrl":null,"provider":"local","provider_metadata":null,"created_at":"2020-12-02T20:34:50.858Z","updated_at":"2020-12-02T20:34:50.858Z"}},
 {"id":6,"nameRU":"Фавела на взрыве","nameEN":"Favela on Blast","director":"Уэсли Пенц","country":"Бразилия","year":"2008","duration":80,"description":"**Визионер из трущоб**\nГимн бразильским гетто (они же фавелы), породившим байле-фанк — взбалмошную смесь музыки стран третьего мира, нелегального рейва и злого фанка, на волне которого вышли в люди Майя и Сантиголд. Снял фильм не кто иной, как Дипло (он же Уэсли Пенц) — диджей, продюсер и крестный отец двух вышеупомянутых артисток. Поэтому неудивительно, что вместо истории жанра в сухом остатке у него вышла увлекательная этнографическая экспедиция в трущобы Рио-де-Жанейро, где наркотики, секс и зашкаливающий уровень преступности играют в становлении байле-фанка не меньшую роль, чем сама музыка.\n","trailerLink":"https://www.youtube.com/watch?v=Cugdwa7mndA","created_at":"2020-12-02T20:37:33.665Z","updated_at":"2020-12-02T20:37:33.665Z","image":{"id":6,"name":"881707734_640","alternativeText":"","caption":"","width":640,"height":360,"formats":{"thumbnail":{"hash":"thumbnail_881707734_640_d6a3a43358","ext":".jpeg","mime":"image/jpeg","width":245,"height":138,"size":6.09,"path":null,"url":"/uploads/thumbnail_881707734_640_d6a3a43358.jpeg"},"small":{"hash":"small_881707734_640_d6a3a43358","ext":".jpeg","mime":"image/jpeg","width":500,"height":281,"size":17.26,"path":null,"url":"/uploads/small_881707734_640_d6a3a43358.jpeg"}},"hash":"881707734_640_d6a3a43358","ext":".jpeg","mime":"image/jpeg","size":23.67,"url":"/uploads/881707734_640_d6a3a43358.jpeg","previewUrl":null,"provider":"local","provider_metadata":null,
 "created_at":"2020-12-02T20:37:23.499Z","updated_at":"2020-12-02T20:37:23.499Z"}},
-{"id":7,"nameRU":"Постеры, сошедшие со стен","nameEN":"The Posters Came from the Walls","director":"Джереми Деллер, Николас Абрахамс","country":"Великобритания","year":"2008","duration":72,"description":"**Depeche Mode как смысл жизни**\nКругосветная панорама, показывающая обычаи и традиции поклонников Depeche Mode по всему миру: от России до Ирана. Отправившись снимать парадную картину, рассказывающую о том, как любят группу Depeche Mode за пределами Британии, авторы фильма столкнулись с тем, что любовь эта подчас носит очень личный — и в то же время общенациональный — характер.\n","trailerLink":"https://www.youtube.com/watch?v=VFMU3crg0sM","created_at":"2020-12-02T20:40:08.342Z","updated_at":"2020-12-02T20:40:08.342Z","image":{"id":7,"name":"posters-came-from-the-walls-2009-001-posters","alternativeText":"","caption":"","width":1000,"height":750,"formats":{"thumbnail":{"hash":"thumbnail_posters_came_from_the_walls_2009_001_posters_180fe1a19f","ext":".jpeg","mime":"image/jpeg","width":208,"height":156,"size":10.53,"path":null,"url":"/uploads/thumbnail_posters_came_from_the_walls_2009_001_posters_180fe1a19f.jpeg"},"medium":{"hash":"medium_posters_came_from_the_walls_2009_001_posters_180fe1a19f","ext":".jpeg","mime":"image/jpeg","width":750,"height":563,"size":92.16,"path":null,"url":"/uploads/medium_posters_came_from_the_walls_2009_001_posters_180fe1a19f.jpeg"},"small":{"hash":"small_posters_came_from_the_walls_2009_001_posters_180fe1a19f","ext":".jpeg","mime":"image/jpeg","width":500,"height":375,"size":46.34,"path":null,"url":"/uploads/small_posters_came_from_the_walls_2009_001_posters_180fe1a19f.jpeg"}},"hash":"posters_came_from_the_walls_2009_001_posters_180fe1a19f","ext":".jpeg","mime":"image/jpeg","size":153.63,"url":"/uploads/posters_came_from_the_walls_2009_001_posters_180fe1a19f.jpeg","previewUrl":null,"provider":"local","provider_metadata":null,"created_at":"2020-12-02T20:39:50.486Z","updated_at":"2020-12-02T20:39:50.486Z"}},
+{"id":7,
+"nameRU":"Постеры, сошедшие со стен",
+"nameEN":"The Posters Came from the Walls",
+"director":"Джереми Деллер, Николас Абрахамс",
+"country":"Великобритания",
+"year":"2008",
+"duration":72,
+"description":"**Depeche Mode как смысл жизни**\nКругосветная панорама, показывающая обычаи и традиции поклонников Depeche Mode по всему миру: от России до Ирана. Отправившись снимать парадную картину, рассказывающую о том, как любят группу Depeche Mode за пределами Британии, авторы фильма столкнулись с тем, что любовь эта подчас носит очень личный — и в то же время общенациональный — характер.\n",
+"trailerLink":"https://www.youtube.com/watch?v=VFMU3crg0sM",
+"created_at":"2020-12-02T20:40:08.342Z",
+"updated_at":"2020-12-02T20:40:08.342Z",
+"image":
+    {
+        "id":7,
+        "name":"posters-came-from-the-walls-2009-001-posters",
+        "alternativeText":"",
+        "caption":"",
+        "width":1000,
+        "height":750,
+        "formats":
+            {
+                "thumbnail":
+                    {
+                        "hash":"thumbnail_posters_came_from_the_walls_2009_001_posters_180fe1a19f",
+                        "ext":".jpeg",
+                        "mime":"image/jpeg",
+                        "width":208,
+                        "height":156,
+                        "size":10.53,
+                        "path":null,
+                        "url":"/uploads/thumbnail_posters_came_from_the_walls_2009_001_posters_180fe1a19f.jpeg"
+                },
+                "medium":
+                    {   
+                        "hash":"medium_posters_came_from_the_walls_2009_001_posters_180fe1a19f",
+                        "ext":".jpeg",
+                        "mime":"image/jpeg",
+                        "width":750,
+                        "height":563,
+                        "size":92.16,
+                        "path":null,
+                        "url":"/uploads/medium_posters_came_from_the_walls_2009_001_posters_180fe1a19f.jpeg"
+                    },
+                    "small":
+                        {
+                            "hash":"small_posters_came_from_the_walls_2009_001_posters_180fe1a19f",
+                            "ext":".jpeg",
+                            "mime":"image/jpeg",
+                            "width":500,
+                            "height":375,
+                            "size":46.34,
+                            "path":null,
+                            "url":"/uploads/small_posters_came_from_the_walls_2009_001_posters_180fe1a19f.jpeg"
+                        }
+                    },
+                "hash":"posters_came_from_the_walls_2009_001_posters_180fe1a19f",
+                "ext":".jpeg","mime":"image/jpeg","size":153.63,
+                "url":"/uploads/posters_came_from_the_walls_2009_001_posters_180fe1a19f.jpeg",
+                "previewUrl":null,
+                "provider":"local",
+                "provider_metadata":null,
+                "created_at":"2020-12-02T20:39:50.486Z",
+                "updated_at":"2020-12-02T20:39:50.486Z"
+            }
+        },
 {"id":8,"nameRU":"Soul Power","nameEN":"Soul Power","director":"Джеффри Леви-Хинте","country":"США","year":"2008","duration":92,"description":"Мухаммед Али против Джеймса Брауна\nХроника трехдневного соул-фестиваля в Заире в 1974 году, приуроченного к историческому бою Мухаммеда Али против Джорджа Формана (также известного как Rumble in the Jungle), — кровь, пот и Джеймс Браун, садящийся на шпагат на глазах у стотысячного стадиона. Скроенный из того же архивного материала, что лег в основу знаменитой боксерской ленты «When We Were Kings», этот фильм представляет собой пошаговую инструкцию «Как сделать громадный фестиваль в Африке: от первой гайки до последней песни».\n","trailerLink":"https://www.youtube.com/watch?v=8OprNgiOq-I","created_at":"2020-12-02T20:57:31.683Z","updated_at":"2020-12-02T20:57:31.683Z","image":{"id":8,"name":"images","alternativeText":"","caption":"","width":266,"height":189,"formats":{"thumbnail":{"hash":"thumbnail_images_5bfcbf36e6","ext":".jpeg","mime":"image/jpeg","width":220,"height":156,"size":8.89,"path":null,"url":"/uploads/thumbnail_images_5bfcbf36e6.jpeg"}},"hash":"images_5bfcbf36e6","ext":".jpeg","mime":"image/jpeg","size":10.06,"url":"/uploads/images_5bfcbf36e6.jpeg","previewUrl":null,"provider":"local","provider_metadata":null,"created_at":"2020-12-02T20:57:25.729Z","updated_at":"2020-12-02T20:57:25.729Z"}},
 {"id":9,"nameRU":" 196 ударов в минуту","nameEN":"196 BPM","director":"Ромуальд Кармакар","country":"Германия","year":"2003","duration":60,"description":"Панорамный взгляд на берлинский Лав-парад 2002-го года с трех разных точек зрения, каждая из которых образует отдельную новеллу. Первая, «Интро», показывает происходящее глазами людей, стоящих у входа в клуб Linientreu; вторая, «Габба», переносит зрителя в гущу толпы на площади Брайтшайдплац, где диджейские вертушки установлены даже в кебабной. И третья, «Хелл за работой», дает исчерпывающее представление о том, как DJ Hell сводит пластинки во время своего сета в WMF.","trailerLink":"https://www.youtube.com/watch?v=GsDRVpdgNJ4","created_at":"2020-12-02T20:59:53.997Z","updated_at":"2020-12-02T20:59:53.997Z","image":{"id":9,"name":"загруженное (1)","alternativeText":"","caption":"","width":560,"height":292,"formats":{"thumbnail":{"hash":"thumbnail_zagruzhennoe_1_fd5faff237","ext":".jpeg","mime":"image/jpeg","width":245,"height":128,"size":5.57,"path":null,"url":"/uploads/thumbnail_zagruzhennoe_1_fd5faff237.jpeg"},"small":{"hash":"small_zagruzhennoe_1_fd5faff237","ext":".jpeg","mime":"image/jpeg","width":500,"height":261,"size":17.87,"path":null,"url":"/uploads/small_zagruzhennoe_1_fd5faff237.jpeg"}},"hash":"zagruzhennoe_1_fd5faff237","ext":".jpeg","mime":"image/jpeg","size":19.39,"url":"/uploads/zagruzhennoe_1_fd5faff237.jpeg","previewUrl":null,"provider":"local","provider_metadata":null,"created_at":"2020-12-02T20:59:37.364Z","updated_at":"2020-12-02T20:59:37.364Z"}},
 {"id":10,"nameRU":" Hit So Hard: Школа жизни Патти Шемель","nameEN":"Hit So Hard: The Life & Near Death Story of Patty Schemel","director":"П.Дэвид Эберсол","country":"США","year":"2011","duration":103,"description":"Это история о тех, кто выжил в 90-е, рассказанная от первого лица: Патти Шемель, барабанщица «золотого» состава группы Hole, открытая лесбиянка и подруга Курта Кобейна, сняла более сорока часов видео на 8-миллиметровую пленку еще в самом начале девяностых. Кобейн, держащий на руках дочь, Кортни Лав, бренчащая что-то на гитаре, сама Патти, зачитывающая в слух итоговой номер Rolling Stone за 94-й год — все это легло в основу Hit So Hard, в котором Дэвид Эбесол реконструирует историю всего беспробудного, безнадежного и до сих пор притягательного поколения 90-х","trailerLink":"https://www.youtube.com/watch?v=DMvFMeaGj_w","created_at":"2020-12-02T21:02:28.791Z","updated_at":"2020-12-02T21:02:28.791Z","image":{"id":10,"name":"images","alternativeText":"","caption":"","width":300,"height":168,"formats":{"thumbnail":{"hash":"thumbnail_images_244e1fd56f","ext":".jpeg","mime":"image/jpeg","width":245,"height":137,"size":11.76,"path":null,"url":"/uploads/thumbnail_images_244e1fd56f.jpeg"}},"hash":"images_244e1fd56f","ext":".jpeg","mime":"image/jpeg","size":14.8,"url":"/uploads/images_244e1fd56f.jpeg","previewUrl":null,"provider":"local","provider_metadata":null,"created_at":"2020-12-02T21:01:43.016Z","updated_at":"2020-12-02T21:01:43.016Z"}},

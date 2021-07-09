@@ -1,14 +1,18 @@
 import React from 'react'
 import './Preloader.css'
 
-const Preloader = () => {
-    return (
-        <div className="preloader preloader_invisible">
-            <div className="preloader__container">
-                <span className="preloader__round"></span>
-            </div>
-        </div>
-    )
-};
+function Preloader({preloader}) {
+  const isPreloaderActive = (
+    `${preloader ? '' : 'preloader_invisible'}`
+  )
+
+  return (
+    <div className={`preloader ${isPreloaderActive}`}>
+      <div className="preloader__container">
+        <span className="preloader__round"/>
+      </div>
+    </div>
+  );
+}
 
 export default Preloader

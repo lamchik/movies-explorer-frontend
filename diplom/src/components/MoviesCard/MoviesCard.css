@@ -10,6 +10,8 @@
 .card__image-img {
   width: 100%;
   margin-bottom: 14px;
+  object-fit: cover;
+  height: 151px;
 }
 
 .card__image-like-wrap {
@@ -25,6 +27,9 @@
   line-height: 16px;
   color: #fff;
   margin: 0 0 29px 0;
+  height: 17px;
+  width: 226px;
+  text-align: start;
 }
 
 .card__like-wrap {
@@ -46,7 +51,7 @@
   align-items: center;
   justify-content: center;
 }
-.card__close-wrap_invisible {
+.card__close-like-wrap_invisible {
   opacity: 0;
 }
 
@@ -94,4 +99,15 @@
   line-height: 13px;
   margin: 0;
   text-align: left;
+}
+
+@media all and (max-width: 767px) {
+  .card__image-img {
+    height: 168px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1267px) {
+  .card__image-img {
+    height: 190px;
+  }
 }

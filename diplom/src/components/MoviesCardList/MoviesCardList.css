@@ -5,6 +5,7 @@
   display: grid;
   grid-template-columns: repeat(4, 24%);
   gap: 38px 20px;
+  min-height: 320px;
 }
 
 @media all and (max-width: 767px) {
